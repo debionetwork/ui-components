@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import { alertIcon } from "@/common/icons"
-import { validateInput } from "@/common/lib/validate"
-import { generateUUID } from "@/common/lib/utils"
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
+import { generateUUID } from "@/lib/utils"
 
 const allowedSize = /^(default|small|large)$/
 
@@ -267,7 +267,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .ui-debio-dropdown
     &__label

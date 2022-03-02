@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-rating />
+    <ui-debio-dropdown />
   </div>
 </template>
