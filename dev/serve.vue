@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-modal :show="true" />
+    <ui-debio-dialog :show="true" />
   </div>
 </template>

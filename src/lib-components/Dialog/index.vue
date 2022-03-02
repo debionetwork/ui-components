@@ -4,7 +4,7 @@
       .dialog-card__title {{ title }}
       .dialog-card__message {{ message }}
       .dialog-card__button
-        Button(
+        UiDebioButton(
           color="secondary" 
           width="150"
           @click="onSubmit"
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import Button from "@/common/components/Button"
+import UiDebioButton from "../Button"
 
 export default {
-  name: "Dialog",
+  name: "UiDebioDialog",
 
   components: {
-    Button
+    UiDebioButton
   },
 
   props: {
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .dialog-card
     padding: 55px 1px
