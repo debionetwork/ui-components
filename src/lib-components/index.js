@@ -12,3 +12,4 @@ export { default as UiDebioBreadcrumbs } from './Breadcrumbs';
 export { default as UiDebioBanner } from './Banner';
 export { default as UiDebioButton } from './Button';
 export { default as UiDebioDataTable } from './DataTable';
+export { default as UiDebioModal } from './Modal';

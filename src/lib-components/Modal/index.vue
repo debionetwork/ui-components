@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { closeIcon } from "@/common/icons"
-import Button from "@/common/components/Button"
+import { closeIcon } from "@debionetwork/ui-icons"
+import Button from "../Button"
 
 const allowedType = /^(alert|form)$/
 
@@ -109,7 +109,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .ui-debio-modal
     position: fixed
