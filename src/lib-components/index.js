@@ -1,2 +1,3 @@
 /* eslint-disable import/prefer-default-export */
 export { default as UiDebioAvatar } from './Avatar';
+export { default as UiDebioTextArea } from './Textarea';
