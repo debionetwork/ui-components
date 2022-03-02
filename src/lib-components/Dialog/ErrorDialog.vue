@@ -16,7 +16,7 @@
           .dialog-error__desc {{ message }}
 
           .dialog-error__button
-            Button.dialog-error__button-msg(
+            UiDebioButton.dialog-error__button-msg(
               color="secondary" 
               width="170"
               height="35"
@@ -25,18 +25,18 @@
 </template>
 
 <script>
-import Button from "@/common/components/Button"
+import UiDebioButton from "../Button"
 import alertIcon from "@/assets/alert-triangle.png"
 
 export default {
-  name: "ErrorDialog",
+  name: "UiDebioErrorDialog",
 
   data: () => ({
     alertIcon
   }),
 
   components: {
-    Button
+    UiDebioButton
   },
 
   props: {
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .dialog-error
     &__title
