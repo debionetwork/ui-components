@@ -7,3 +7,4 @@ export { default as UiDebioStepper } from './Stepper';
 export { default as UiDebioRating } from './Rating';
 export { default as UiDebioIcon } from './Icon';
 export { default as UiDebioDropdown } from './Dropdown';
+export { default as UiDebioCard } from './Card';
