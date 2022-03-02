@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-card>a</ui-debio-card>
+    <ui-debio-banner />
   </div>
 </template>
