@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { alertIcon } from "@/common/icons"
-import { validateInput } from "@/common/lib/validate"
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
 
 export default {
   name: "UiDebioInput",
@@ -134,7 +134,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "@/common/styles/mixins.sass"
+@import "@/styles/mixins.sass"
 .ui-debio-input
   transition: all cubic-bezier(.7, -0.04, .61, 1.14) .3s
   
