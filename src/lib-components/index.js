@@ -10,3 +10,4 @@ export { default as UiDebioDropdown } from './Dropdown';
 export { default as UiDebioCard } from './Card';
 export { default as UiDebioBreadcrumbs } from './Breadcrumbs';
 export { default as UiDebioBanner } from './Banner';
+export { default as UiDebioButton } from './Button';
