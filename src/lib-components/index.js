@@ -13,3 +13,4 @@ export { default as UiDebioBanner } from './Banner';
 export { default as UiDebioButton } from './Button';
 export { default as UiDebioDataTable } from './DataTable';
 export { default as UiDebioModal } from './Modal';
+export { default as UiDebioFile } from './File';
