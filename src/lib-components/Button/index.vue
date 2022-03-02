@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "Button",
+  name: "UiDebioButton",
   props: {
     to: { type: [String, Object], default: null},
     color: { type: String, default: "white"},
