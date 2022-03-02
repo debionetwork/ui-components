@@ -26,7 +26,7 @@
 
         .ui-debio-modal__card-cta(v-if="showCta")
           slot(name="cta" v-if="$slots['cta'] || $scopedSlots['cta']")
-          Button(
+          UiDebioButton(
             v-else
             :disabled="ctaDisabled"
             :outlined="ctaOutlined"
@@ -37,13 +37,13 @@
 
 <script>
 import { closeIcon } from "@debionetwork/ui-icons"
-import Button from "../Button"
+import UiDebioButton from "../Button"
 
 const allowedType = /^(alert|form)$/
 
 export default {
   name: "UiDebioModal",
-  components: { Button },
+  components: { UiDebioButton },
   
   props: {
     show: { type: Boolean, default: false },

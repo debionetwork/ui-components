@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import Button from "../Button"
+import UiDebioButton from "../Button"
 
 export default {
   name: "SearchBar",
   components: {
-    Button
+    UiDebioButton
   },
   props: {
     filteredItems: { type: Array, default: () => [] },

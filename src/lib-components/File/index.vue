@@ -8,13 +8,13 @@
       input.ui-debio-file__input(type="file" ref="input-file" :accept="accept" @change="handleFileChange")
       ui-debio-input(block read-only :variant="variant" outlined :value="computeFileName" :placeholder="computeButtonLabel")
         v-icon(slot="icon-append" v-if="selectedFile" size="15" @click="handleClearFile") mdi-window-close
-      Button.ui-debio-file__button(:color="computeButtonVariant" height="40" @click="handleChooseFile") {{ computeButtonLabel }}
+      UiDebioButton.ui-debio-file__button(:color="computeButtonVariant" height="40" @click="handleChooseFile") {{ computeButtonLabel }}
 
     .ui-debio-file__error-message(v-if="computeErrorMessage") {{ computeErrorMessage }}
 </template>
 
 <script>
-import Button from "../Button"
+import UiDebioButton from "../Button"
 import { alertIcon } from "@debionetwork/ui-icons"
 import { validateInput } from "@/lib/validate"
 
@@ -22,7 +22,7 @@ export default {
   name: "UiDebioFile",
   mixins: [validateInput],
 
-  components: { Button },
+  components: { UiDebioButton },
 
   props: {
     accept: { type: [Array, String], default: () => [".docx", ".pdf", ".doc"] },
