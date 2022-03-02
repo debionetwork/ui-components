@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { starIcon } from "@/common/icons"
+import { starIcon } from "@debionetwork/ui-icons"
 
 export default {
   name: "UiDebioRating",
@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .ui-debio-rating
     &__wrapper

@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-stepper :items="['asd', 'asd']" />
+    <ui-debio-rating />
   </div>
 </template>
