@@ -15,3 +15,4 @@ export { default as UiDebioDataTable } from './DataTable';
 export { default as UiDebioModal } from './Modal';
 export { default as UiDebioFile } from './File';
 export { default as UiDebioDialog } from './Dialog';
+export { default as UiDebioAlertDialog } from './Dialog/AlertDialog';
