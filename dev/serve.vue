@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-alert-dialog :show="true" />
+    <ui-debio-error-dialog :show="true" />
   </div>
 </template>
