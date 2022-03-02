@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <ui-debio-recaptcha sitekey="6LffSE8aAAAAAKg6qAIF6dk_IMLrlB9liGestbW6" :verify="true" />
+    <ui-debio-stepper :items="['asd', 'asd']" />
   </div>
 </template>
