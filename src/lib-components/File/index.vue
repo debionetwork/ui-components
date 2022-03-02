@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Button from "@/common/components/Button"
-import { alertIcon } from "@/common/icons"
-import { validateInput } from "@/common/lib/validate"
+import Button from "../Button"
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
 
 export default {
   name: "UiDebioFile",
@@ -127,7 +127,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .ui-debio-file
     width: 100%
