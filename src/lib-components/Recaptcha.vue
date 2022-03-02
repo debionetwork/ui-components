@@ -6,20 +6,15 @@
 import VueRecaptcha from "vue-recaptcha"
 
 export default {
-  name: "Recaptcha",
+  name: "UiDebioRecaptcha",
 
   props: {
+    sitekey: { type: String, default: null },
     verify: Function
   },
     
   components: {
     VueRecaptcha
-  },
-
-  computed: {
-    sitekey() {
-      return process.env.VUE_APP_RECAPTCHA_SITE_KEY
-    }
   }
 }
 </script>
