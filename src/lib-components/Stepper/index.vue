@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/common/styles/mixins.sass"
+  @import "@/styles/mixins.sass"
 
   .ui-debio-stepper
     &__wrapper
