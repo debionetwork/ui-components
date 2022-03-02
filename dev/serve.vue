@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <debionetwork-ui-components-sample />
+    <ui-debio-avatar />
   </div>
 </template>
