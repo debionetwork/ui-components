@@ -1,7 +1,7 @@
 {
   "name": "@debionetwork/ui-components",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A Vue component library used in DeBio Networks UI apps.",
   "main": "dist/debionetwork-ui-components.ssr.js",
   "browser": "dist/debionetwork-ui-components.esm.js",
   "module": "dist/debionetwork-ui-components.esm.js",
