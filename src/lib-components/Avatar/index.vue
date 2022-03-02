@@ -46,7 +46,7 @@
 <script>
 const allowedRoundedType = /^(circle|default)$/
 
-import { metamaskFoxIcon } from "@/common/icons"
+import { metamaskFoxIcon } from "@debionetwork/ui-icons"
 
 export default {
   name: "UiDebioAvatar",
