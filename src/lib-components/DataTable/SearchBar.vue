@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Button from "@/common/components/Button"
+import Button from "../Button"
 
 export default {
   name: "SearchBar",

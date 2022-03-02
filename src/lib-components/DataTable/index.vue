@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import EntrySelect from "@/common/components/DataTable/EntrySelect"
+import EntrySelect from "./EntrySelect"
 
 export default {
   name: "DataTable",
@@ -128,9 +128,9 @@ export default {
 </script>
 
 <style lang="sass">
-@import '/src/common/styles/variables.scss'
+@import '@/styles/variables.scss'
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap')
-@import "@/common/styles/mixins.sass"
+@import "@/styles/mixins.sass"
 
 .degenics-datatable-card 
   overflow: hidden !important
