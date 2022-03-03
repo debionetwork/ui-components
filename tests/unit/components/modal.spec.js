@@ -1,15 +1,15 @@
-import { createLocalVue, mount } from "@vue/test-utils"
-import { closeIcon } from "@debionetwork/ui-icons"
-import Vue from "vue"
-import Vuetify from "vuetify"
-import Modal from "@/components/Modal"
-import Icon from "@/components/Icon"
+import { createLocalVue, mount } from '@vue/test-utils'
+import { closeIcon } from '@debionetwork/ui-icons'
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import Modal from '@/components/UiDebioModal'
+import Icon from '@/components/UiDebioIcon'
 
 Vue.use(Vuetify)
 
 const localVue = createLocalVue()
 
-describe("Modal Component", () => {
+describe('Modal Component', () => {
   const stubs = { UiDebioIcon: Icon }
   let container
   let vuetify
@@ -18,7 +18,7 @@ describe("Modal Component", () => {
     vuetify = new Vuetify()
   })
 
-  it("Should render", () => {
+  it('Should render', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -28,7 +28,7 @@ describe("Modal Component", () => {
     expect(container.exists()).toBe(true)
   })
 
-  it("Should render", () => {
+  it('Should render', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -36,10 +36,10 @@ describe("Modal Component", () => {
     })
 
     expect(container.exists()).toBe(true)
-    expect(container.classes()).not.toContain("ui-debio-modal--active")
+    expect(container.classes()).not.toContain('ui-debio-modal--active')
   })
 
-  it("Should show modal", () => {
+  it('Should show modal', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -49,44 +49,44 @@ describe("Modal Component", () => {
       }
     })
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
+    expect(container.classes()).toContain('ui-debio-modal--active')
   })
 
-  it("Should show modal with custom title", () => {
+  it('Should show modal with custom title', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
       stubs,
       propsData: {
         show: true,
-        title: "Custom modal title"
+        title: 'Custom modal title'
       }
     })
 
-    const title = container.find(".ui-debio-modal__card-title").element.innerHTML
+    const title = container.find('.ui-debio-modal__card-title').element.innerHTML
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
-    expect(title.replace(/<\/?span[^>]*>/g, "")).toBe("Custom modal title")
+    expect(container.classes()).toContain('ui-debio-modal--active')
+    expect(title.replace(/<\/?span[^>]*>/g, '')).toBe('Custom modal title')
   })
-  
-  it("Should show modal with custom cta title", () => {
+
+  it('Should show modal with custom cta title', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
       stubs,
       propsData: {
         show: true,
-        ctaTitle: "Custom cta modal title"
+        ctaTitle: 'Custom cta modal title'
       }
     })
 
-    const ctaTitle = container.find(".v-btn__content").element.innerHTML
+    const ctaTitle = container.find('.v-btn__content').element.innerHTML
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
-    expect(ctaTitle).toBe("Custom cta modal title")
+    expect(container.classes()).toContain('ui-debio-modal--active')
+    expect(ctaTitle).toBe('Custom cta modal title')
   })
 
-  it("Should not show modal cta", () => {
+  it('Should not show modal cta', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -97,13 +97,13 @@ describe("Modal Component", () => {
       }
     })
 
-    const cta = container.find(".ui-debio-modal__card-cta")
+    const cta = container.find('.ui-debio-modal__card-cta')
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
+    expect(container.classes()).toContain('ui-debio-modal--active')
     expect(cta.exists()).toBe(false)
   })
 
-  it("Should not show modal title", () => {
+  it('Should not show modal title', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -114,13 +114,13 @@ describe("Modal Component", () => {
       }
     })
 
-    const title = container.find(".ui-debio-modal__card-title")
+    const title = container.find('.ui-debio-modal__card-title')
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
+    expect(container.classes()).toContain('ui-debio-modal--active')
     expect(title.exists()).toBe(false)
   })
 
-  it("Should render modal with icon", () => {
+  it('Should render modal with icon', () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -131,13 +131,13 @@ describe("Modal Component", () => {
       }
     })
 
-    const icon = container.find(".ui-debio-modal__card-icon")
+    const icon = container.find('.ui-debio-modal__card-icon')
 
-    expect(container.classes()).toContain("ui-debio-modal--active")
+    expect(container.classes()).toContain('ui-debio-modal--active')
     expect(icon.exists()).toBe(true)
   })
 
-  it("Should emited close modal", async () => {
+  it('Should emited close modal', async () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -147,14 +147,14 @@ describe("Modal Component", () => {
       }
     })
 
-    const closeButton = container.find(".ui-debio-modal__card-close")
-    closeButton.vm.$emit("onClose", false)
+    const closeButton = container.find('.ui-debio-modal__card-close')
+    closeButton.vm.$emit('onClose', false)
     await closeButton.vm.$nextTick()
 
-    expect(closeButton.emitted("onClose")[0][0]).toBeFalsy()
+    expect(closeButton.emitted('onClose')[0][0]).toBeFalsy()
   })
 
-  it("Should called cta action", async () => {
+  it('Should called cta action', async () => {
     const customAction = jest.fn()
 
     container = mount(Modal, {
@@ -167,14 +167,14 @@ describe("Modal Component", () => {
       }
     })
 
-    const button = container.find("button")
-    await button.trigger("click")
+    const button = container.find('button')
+    await button.trigger('click')
     await button.vm.$nextTick()
 
     expect(customAction).toBeCalled()
   })
 
-  it("Should remove dismiss icon", async () => {
+  it('Should remove dismiss icon', async () => {
     container = mount(Modal, {
       localVue,
       vuetify,
@@ -184,7 +184,7 @@ describe("Modal Component", () => {
         disableDismiss: true
       }
     })
-    
-    expect(container.find(".ui-debio-modal__card-close").exists()).toBe(false)
+
+    expect(container.find('.ui-debio-modal__card-close').exists()).toBe(false)
   })
 })

@@ -44,27 +44,27 @@
 </template>
 
 <script>
+import { metamaskFoxIcon } from '@debionetwork/ui-icons'
+
 const allowedRoundedType = /^(circle|default)$/
 
-import { metamaskFoxIcon } from "@debionetwork/ui-icons"
-
 export default {
-  name: "UiDebioAvatar",
+  name: 'UiDebioAvatar',
   inheritAttrs: false,
 
   props: {
-    src: { type: String, default: "" },
+    src: { type: String, default: '' },
     size: { type: [String, Number], default: 44 },
     initial: { type: String, default: null },
     background: { type: String, default: null },
     borderSize: { type: [String, Number], default: 0 },
-    borderColor: { type: String, default: "transparent" },
-    optionText: { type: String, default: "" },
+    borderColor: { type: String, default: 'transparent' },
+    optionText: { type: String, default: '' },
     elevation: { type: [String, Number], default: null },
     to: { type: [String, Object], default: undefined },
     roundedType: {
       type: String,
-      default: "default",
+      default: 'default',
       validator: (type) => allowedRoundedType.test(type)
     },
     option: Boolean,
@@ -80,72 +80,72 @@ export default {
   }),
 
   computed: {
-    isComponentType() {
-      return this.to ? "router-link" : "div"
+    isComponentType () {
+      return this.to ? 'router-link' : 'div'
     },
 
-    showInitial() {
-      return this.initial && !this.src && !this.$slots["icon"]
+    showInitial () {
+      return this.initial && !this.src && !this.$slots.icon
     },
 
-    classes() {
-      const roundedType = this.roundedType === "default"
-        ? "ui-debio-avatar--rounded"
-        : "ui-debio-avatar--rounded-circle"
+    classes () {
+      const roundedType = this.roundedType === 'default'
+        ? 'ui-debio-avatar--rounded'
+        : 'ui-debio-avatar--rounded-circle'
 
       return [
-        "ui-debio-avatar",
-        { "ui-debio-avatar--error": this.imageError || !this.src },
-        { "ui-debio-avatar--default-avatar": /(defaultAvatar)/.test(this.src) },
+        'ui-debio-avatar',
+        { 'ui-debio-avatar--error': this.imageError || !this.src },
+        { 'ui-debio-avatar--default-avatar': /(defaultAvatar)/.test(this.src) },
         { [roundedType]: this.rounded },
         { [`elevation-${this.elevation}`]: this.elevation }
       ]
     },
-    
-    computeAvatarImage() {
-      return this.src ? this.src : require("@/assets/defaultImage.svg")
+
+    computeAvatarImage () {
+      return this.src ? this.src : require('@/assets/defaultImage.svg')
     },
 
-    computeStyle() {
+    computeStyle () {
       return {
         width: `${this.size}px`,
         height: `${this.size}px`
       }
     },
 
-    computeBorderedStyle() {
+    computeBorderedStyle () {
       const borderColor = (!this.showOption || !this.isHovered) && !this.to
         ? this.borderColor
-        : "#C400A5"
-      
-      return { border: `solid ${this.borderSize}px ${this.active ? "#C400A5" : borderColor}` }
+        : '#C400A5'
+
+      return { border: `solid ${this.borderSize}px ${this.active ? '#C400A5' : borderColor}` }
     },
 
-    computeOptionStyle() {
-      return { "ui-debio-avatar__option--opened": this.showOption }
+    computeOptionStyle () {
+      return { 'ui-debio-avatar__option--opened': this.showOption }
     }
   },
 
   methods: {
-    handleClick() {
-      this.$emit("avatarClicked")
+    handleClick () {
+      this.$emit('avatarClicked')
     },
 
-    handleErrorImage(e) {
+    handleErrorImage (e) {
       this.imageError = true
-      if (e.type === "error") e.target.src = require("@/assets/defaultImage.svg")
+      if (e.type === 'error') e.target.src = require('@/assets/defaultImage.svg')
     },
 
-    handleOptionClick() {
-      this.$emit("optionClicked")
+    handleOptionClick () {
+      this.$emit('optionClicked')
     },
 
-    handleMouseOver() {
+    handleMouseOver () {
       this.showOption = true
       this.isHovered = true
     },
 
-    handleMouseLeave() {
+    handleMouseLeave () {
       this.showOption = false
       this.isHovered = false
     }
@@ -204,7 +204,7 @@ export default {
     justify-content: center
     align-items: center
     background: #FFFFFF
-    
+
   &__initial
     position: relative
     z-index: 7

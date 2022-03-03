@@ -1,18 +1,15 @@
 <script>
-import Vue from 'vue';
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { DebionetworkUiComponentsSample } from '@/entry.esm';
+import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ServeDev',
-  // components: {
-  //  DebionetworkUiComponentsSample,
-  // }
-});
+  name: 'ServeDev'
+})
 </script>
 
 <template>
-  <div id="app">
-    <ui-debio-button>Click me</ui-debio-button>
-  </div>
+  <v-app>
+    <v-main>
+      <ui-debio-button>Click me</ui-debio-button>
+    </v-main>
+  </v-app>
 </template>

@@ -14,18 +14,18 @@
 <script>
 export default {
   props: {
-    value: {type: [Number, String]}
+    value: { type: [Number, String] }
   },
-  data:() => ({
+  data: () => ({
     numOfEntrieSlect: [5, 10, 15, 20]
   }),
   computed: {
     numOfEntries: {
-      get() {
+      get () {
         return this.value
       },
-      set(val) {
-        this.$emit("select", val)
+      set (val) {
+        this.$emit('select', val)
       }
     }
   }
@@ -47,10 +47,8 @@ export default {
     fieldset
       border: 2px solid $color-secondary !important
 
-
-
   .v-input
-    width: 66px 
+    width: 66px
 
   .v-input__slot
     background: $color-form-background !important
@@ -63,14 +61,11 @@ export default {
       font-size: 12px
       margin: 6px 4px 7px 0 !important
 
-
   .v-input__append-inner
     width: 20px
     margin-top: 12px !important
-    
+
     .v-input__icon
       height: 2px
-
-
 
 </style>

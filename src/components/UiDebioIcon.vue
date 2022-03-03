@@ -1,36 +1,36 @@
 <script>
 export default {
-  name: "UiDebioIcon",
+  name: 'UiDebioIcon',
 
   props: {
     icon: { type: String, default: null },
     size: { type: [String, Number], default: 40 },
     width: { type: [String, Number], default: null },
     height: { type: [String, Number], default: null },
-    viewBox: { type: String, default: "0 0 40 40" },
-    strokeWidth: { type: [String, Number], default: "2" },
-    color: { type: String, default: "#C400A5" },
+    viewBox: { type: String, default: '0 0 40 40' },
+    strokeWidth: { type: [String, Number], default: '2' },
+    color: { type: String, default: '#C400A5' },
     fill: Boolean,
     stroke: Boolean
   },
 
   computed: {
-    fillColor() {
-      return this.fill ? "currentColor" : "transparent"
+    fillColor () {
+      return this.fill ? 'currentColor' : 'transparent'
     },
 
-    strokeColor() {
-      return this.stroke ? "currentColor" : "transparent"
+    strokeColor () {
+      return this.stroke ? 'currentColor' : 'transparent'
     },
 
-    computeStyle() {
+    computeStyle () {
       return { color: this.color }
     },
 
-    computeStrokeWidth() {
+    computeStrokeWidth () {
       if (this.stroke) return `${this.strokeWidth}`
 
-      return ""
+      return ''
     }
   }
 }

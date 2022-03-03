@@ -2,7 +2,6 @@
   "name": "@debionetwork/ui-components",
   "version": "0.0.3",
   "description": "A Vue component library used in DeBio Networks UI apps.",
-  "main": "dist/debionetwork-ui-components.ssr.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/debionetwork/ui-components"
@@ -10,31 +9,26 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "scripts": {
-    "build": "npm run test:unit && vue-cli-service build --target lib --name menteora src/plugin.js",
+    "build": "npm run test && vue-cli-service build --target lib --name debionetwork-ui-components src/plugin.js",
     "build:demo": "vue-cli-service build --dest demo ./dev/main.js",
-    "build:local": "vue-cli-service build --target lib --name menteora src/plugin.js && npm pack",
+    "build:local": "vue-cli-service build --target lib --name debionetwork-ui-components src/plugin.js && npm pack",
     "lint": "vue-cli-service lint --fix && vue-cli-service lint dev --fix",
+    "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit",
     "serve": "vue-cli-service serve dev/serve.js",
     "prepublish": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.14.7",
     "@debionetwork/ui-icons": "0.0.1",
-    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-babel": "^4.5.7",
     "@vue/cli-plugin-eslint": "^4.5.7",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "^4.5.13",
-    "@vue/composition-api": "^1.1.4",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "core-js": "^3.6.5",
-    "cross-env": "^7.0.3",
     "eslint": "^7.10.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -49,8 +43,6 @@
     "vue": "^2.6.12",
     "vue-cli-plugin-vuetify": "^2.0.7",
     "vue-jest": "^3.0.7",
-    "vue-json-tree": "^0.4.3",
-    "vue-json-tree-view": "^2.1.6",
     "vue-recaptcha": "^1.3.0",
     "vue-router": "^3.4.9",
     "vue-template-compiler": "^2.6.12",

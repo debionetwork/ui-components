@@ -26,7 +26,6 @@
       template(v-for="(slot, name) in $scopedSlots" v-slot:[name]="item")
         slot(:name="name" v-bind="item")
 
-
       //- <!-- Custom Footer -->
       //- <!-- For build fix -->
       <template v-slot:footer>
@@ -49,79 +48,79 @@
 </template>
 
 <script>
-import EntrySelect from "./EntrySelect"
+import EntrySelect from './UiDebioDataTable/EntrySelect'
 
 export default {
-  name: "DataTable",
+  name: 'DataTable',
   components: { EntrySelect },
   props: {
-    headers: { type: [Object, Array]},
-    items: { type: [Object, Array]},
-    additionalClass: { type: String},
-    sortBy: { type: Array},
-    sortDesc: { type: Array},
-    loading: { type: Boolean},
-    expand: { type: Boolean},
-    customFilter: {type: [String, Boolean], default: false},
-    loadingText: {type: String, default: ""},
-    disableSort: {type: Boolean, default: false},
-    showFooter: {type: Boolean, default: true}
+    headers: { type: [Object, Array] },
+    items: { type: [Object, Array] },
+    additionalClass: { type: String },
+    sortBy: { type: Array },
+    sortDesc: { type: Array },
+    loading: { type: Boolean },
+    expand: { type: Boolean },
+    customFilter: { type: [String, Boolean], default: false },
+    loadingText: { type: String, default: '' },
+    disableSort: { type: Boolean, default: false },
+    showFooter: { type: Boolean, default: true }
   },
   data: () => ({
     page: 1,
     // pageCount: 2,
     entriesPerPage: 5
-    
+
   }),
   methods: {
-    clickedRow(item) {
-      this.$emit("click", item)
+    clickedRow (item) {
+      this.$emit('click', item)
     },
 
-    setEntriesPerPage(val) {
+    setEntriesPerPage (val) {
       this.entriesPerPage = val
     },
 
-    defaultFilter(value, search /*item*/) {
+    defaultFilter (value, search /* item */) {
       return value != null &&
       search != null &&
-      typeof value !== "boolean" &&
+      typeof value !== 'boolean' &&
       value.toString().toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) !== -1
     },
 
     /**
      * Footer Helper functions
      */
-    from() {
-      if (this.items.length == 0) {
+    from () {
+      if (this.items.length === 0) {
         return 0
       }
       return this.entriesPerPage * (this.page - 1) + 1
     },
 
-    total() {
+    total () {
       return this.items.length
     }
     /** ----------------- */
   },
   computed: {
     dataTableSearchVal: {
-      get() {
+      get () {
         return this.search
       },
-      set(val) {
-        this.$emit("input", val)
+      set (val) {
+        this.$emit('input', val)
       }
     },
-    _customFilter() {
+    _customFilter () {
       return this.customFilter ? this.customFilter : this.defaultFilter
     },
-    pageCount() {
+    pageCount () {
       return Math.ceil(this.items.length / this.entriesPerPage)
     },
 
-    computedLoadingText() {
-      return this.loadingText ? this.loadingText : "Loading.. Please wait"
+    computedLoadingText () {
+      return this.loadingText ? this.loadingText : 'Loading.. Please wait'
     }
 
   }
@@ -129,17 +128,16 @@ export default {
 </script>
 
 <style lang="sass">
-@import '../../styles/variables.scss'
-@import "../../assets/open-sans-font.css"
-@import "../../styles/mixins.sass"
+@import '../styles/variables.scss'
+@import "../assets/open-sans-font.css"
+@import "../styles/mixins.sass"
 
-.degenics-datatable-card 
+.degenics-datatable-card
   overflow: hidden !important
   font-family: 'Open Sans', sans-serif !important
   padding: 1.875rem
 
-
-.degenics-data-table 
+.degenics-data-table
   border-radius: 8px
   overflow: hidden
   margin-top: 24px
@@ -147,73 +145,61 @@ export default {
   letter-spacing: 0.1px
   @include body-text-3-opensans-medium
 
-  thead 
+  thead
     background-color: #f5f7f9 !important
-    
-    th.column.sortable i 
+
+    th.column.sortable i
       @include body-text-3-opensans
-    th 
+    th
       padding-top: 12px !important
       padding-bottom: 12px !important
       height: 40px !important
 
-      * 
+      *
         color: black !important
         letter-spacing: -0.004em
         @include body-text-3-opensans
-      
-      i.v-icon.notranslate.v-data-table-header__icon:not(:hover) 
+
+      i.v-icon.notranslate.v-data-table-header__icon:not(:hover)
         opacity: 0.5
-      
-      &.active 
-        i.v-icon.notranslate.v-data-table-header__icon 
+
+      &.active
+        i.v-icon.notranslate.v-data-table-header__icon
           opacity: 1
-        
-      
-    
-  
 
-  tbody 
+  tbody
     border-bottom: none !important
-    td 
-      * 
+    td
+      *
         max-height: 50px
-      
-    
 
-    tr 
+    tr
       margin: 10px 0 10px 0
-      * 
+      *
         border-bottom: #f5f7f9 !important
         font-size: 12px
         font-weight: 400
-      
-    
-  
 
-  .footer 
+  .footer
     height: 72px
-    border-top: #000000 solid 0.5px 
+    border-top: #000000 solid 0.5px
     padding: 5px 0 0 0
 
-    .pagination-info 
+    .pagination-info
       color: $color-text-secondary
       display: flex
 
-    
-    .v-pagination 
-      button 
+    .v-pagination
+      button
         font-size: 11px
         min-width: 24px
         height: 24px
         outline: none
-        &:not(.v-pagination__item--active) 
+        &:not(.v-pagination__item--active)
           background: $color-border
 
-
-      li:first-child, li:last-child 
+      li:first-child, li:last-child
         button
           width: 24px
-
 
 </style>

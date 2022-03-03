@@ -1,4 +1,4 @@
-<template lang="pug">  
+<template lang="pug">
   v-dialog(:value="show" :height="height"  :width="width" persistent)
     v-card.dialog-alert
       .dialog-alert__image
@@ -8,18 +8,18 @@
       .dialog-alert__message {{ message }}
       .dialog-alert__button
         UiDebioButton.dialog-alert__msg-button(
-          color="secondary" 
+          color="secondary"
           width="150"
           @click="onSubmit"
           ) {{ btnMessage}}
-    
+
 </template>
 
 <script>
-import UiDebioButton from "../Button"
+import UiDebioButton from './UiDebioButton'
 
 export default {
-  name: "UiDebioAlertDialog",
+  name: 'UiDebioAlertDialog',
 
   components: {
     UiDebioButton
@@ -29,26 +29,26 @@ export default {
     show: Boolean,
     height: { type: [String, Number], default: 299 },
     width: { type: [String, Number], default: 500 },
-    title:  { type: String, default: "Title Alert"},
-    message:  { type: String, default: "Message Alert" },
-    imgPath: { type: String, default: "alert-circle-primary.png" },
-    btnMessage: { type: String, default: "Back to Dashboard" }
+    title: { type: String, default: 'Title Alert' },
+    message: { type: String, default: 'Message Alert' },
+    imgPath: { type: String, default: 'alert-circle-primary.png' },
+    btnMessage: { type: String, default: 'Back to Dashboard' }
   },
 
   methods: {
-    closeDialog() {
-      this.$emit("close")
+    closeDialog () {
+      this.$emit('close')
     },
 
-    onSubmit() {
-      this.$emit("click")
+    onSubmit () {
+      this.$emit('click')
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .dialog-alert
     &__image
@@ -56,7 +56,7 @@ export default {
       justify-content: center
       align-items: center
       padding-top: 48.67px
-      
+
     &__title
       display: flex
       justify-content: center
@@ -75,8 +75,8 @@ export default {
       @include new-body-text-2
 
     &__button
-      display: flex      
-      justify-content: center      
+      display: flex
+      justify-content: center
       align-items: center
       text-align: center
       padding-bottom: 42px

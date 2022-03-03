@@ -5,18 +5,18 @@
       .dialog-card__message {{ message }}
       .dialog-card__button
         UiDebioButton(
-          color="secondary" 
+          color="secondary"
           width="150"
           @click="onSubmit"
           ) {{ btnMessage }}
-      
+
 </template>
 
 <script>
-import UiDebioButton from "../Button"
+import UiDebioButton from './UiDebioButton'
 
 export default {
-  name: "UiDebioDialog",
+  name: 'UiDebioDialog',
 
   components: {
     UiDebioButton
@@ -26,25 +26,25 @@ export default {
     show: Boolean,
     height: { type: [String, Number], default: 276 },
     width: { type: [String, Number], default: 500 },
-    title: { type: String, default: "Dialog Title" },
-    message:{ type: String, default: "Dialog Message"},
-    btnMessage: { type: String, default: "OK"}
+    title: { type: String, default: 'Dialog Title' },
+    message: { type: String, default: 'Dialog Message' },
+    btnMessage: { type: String, default: 'OK' }
   },
 
   methods: {
-    closeDialog() {
-      this.$emit("close")
+    closeDialog () {
+      this.$emit('close')
     },
 
-    onSubmit() {
-      this.$emit("click")
+    onSubmit () {
+      this.$emit('click')
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .dialog-card
     padding: 55px 1px
@@ -68,11 +68,10 @@ export default {
       @include body-text-3-opensans
 
     &__button
-      display: flex      
-      justify-content: center      
+      display: flex
+      justify-content: center
       align-items: center
       text-align: center
       padding-top: 37px
-
 
 </style>

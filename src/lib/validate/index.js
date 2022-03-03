@@ -1,4 +1,4 @@
-import validateInput from "./validateInput"
+import validateInput from './validateInput'
 
 export {
   validateInput

@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import { starIcon } from "@debionetwork/ui-icons"
+import { starIcon } from '@debionetwork/ui-icons'
 
 export default {
-  name: "UiDebioRating",
+  name: 'UiDebioRating',
 
   props: {
     rating: { type: Number, default: 0, validator: val => val >= 0 && val <= 5 },
@@ -53,7 +53,7 @@ export default {
   },
 
   computed: {
-    computeRating() {
+    computeRating () {
       return this.rating > this.totalRating ? this.totalRating : this.rating
     }
   },
@@ -67,7 +67,7 @@ export default {
   watch: {
     value: {
       immediate: true,
-      handler(val) {
+      handler (val) {
         if (val > this.totalRating) this.interactiveStar = this.totalRating
         else this.interactiveStar = val
       }
@@ -75,18 +75,18 @@ export default {
   },
 
   methods: {
-    handleClicked(star) {
+    handleClicked (star) {
       if (star === this.interactiveStar) this.interactiveStar = 0
       else this.interactiveStar = star
 
-      this.$emit("input", this.interactiveStar)
+      this.$emit('input', this.interactiveStar)
     }
   }
 }
 </script>
 
 <style lang="sass">
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .ui-debio-rating
     &__wrapper

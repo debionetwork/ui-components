@@ -10,7 +10,7 @@
               .banner__content-description
                 .banner__title {{ title }}
                 .banner__subtitle {{ subtitle }}
-              
+
             .banner__cta
               .banner__cta-wrapper
                 slot(name="cta")
@@ -23,15 +23,15 @@
 </template>
 
 <script>
-import { particleIllustration } from "@debionetwork/ui-icons"
+import { particleIllustration } from '@debionetwork/ui-icons'
 
 const allowedGradients = /^(primary|secondary|tertiary|violet)$/
 
 export default {
-  name: "Banner",
+  name: 'Banner',
   props: {
-    title: { type: String, default: "Default title" },
-    subtitle: { type: String, default: "Default subtitle" },
+    title: { type: String, default: 'Default title' },
+    subtitle: { type: String, default: 'Default subtitle' },
     gradientColor: { type: String, default: null },
     withDecoration: Boolean
   },
@@ -39,14 +39,14 @@ export default {
   data: () => ({ particleIllustration }),
 
   computed: {
-    classes() {
+    classes () {
       return [
-        { "banner--with-gradient": this.gradientColor && allowedGradients.test(this.gradientColor) },
-        { "banner--gradient-primary": this.gradientColor === "primary" },
-        { "banner--gradient-secondary": this.gradientColor === "secondary" },
-        { "banner--gradient-tertiary": this.gradientColor === "tertiary" },
-        { "banner--gradient-violet": this.gradientColor === "violet" },
-        { "banner--with-decoration": this.withDecoration }
+        { 'banner--with-gradient': this.gradientColor && allowedGradients.test(this.gradientColor) },
+        { 'banner--gradient-primary': this.gradientColor === 'primary' },
+        { 'banner--gradient-secondary': this.gradientColor === 'secondary' },
+        { 'banner--gradient-tertiary': this.gradientColor === 'tertiary' },
+        { 'banner--gradient-violet': this.gradientColor === 'violet' },
+        { 'banner--with-decoration': this.withDecoration }
       ]
     }
   }
@@ -125,14 +125,14 @@ export default {
 
       &__content
         gap: 1.25rem
-        
+
       &__content-description
         margin-left: unset
         text-align: center
 
       &__illustrations
         align-items: center
-        
+
       &__illustration
         position: relative
         top: unset

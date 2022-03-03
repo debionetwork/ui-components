@@ -7,17 +7,17 @@
           v-btn(icon @click="closeDialog")
             v-icon mdi-close
 
-        v-card-text(align="center")          
+        v-card-text(align="center")
           .dialog-error__title {{ title }}
 
           .dialog-error__image
             v-img(v-bind:src="alertIcon" max-width="100")
-            
+
           .dialog-error__desc {{ message }}
 
           .dialog-error__button
             UiDebioButton.dialog-error__button-msg(
-              color="secondary" 
+              color="secondary"
               width="170"
               height="35"
               @click="closeDialog"
@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import UiDebioButton from "../Button"
-import alertIcon from "@/assets/alert-triangle.png"
+import UiDebioButton from './UiDebioButton'
+import alertIcon from '@/assets/alert-triangle.png'
 
 export default {
-  name: "UiDebioErrorDialog",
+  name: 'UiDebioErrorDialog',
 
   data: () => ({
     alertIcon
@@ -41,20 +41,20 @@ export default {
 
   props: {
     show: Boolean,
-    title: { type: String, default: "Title"},
-    message:  { type: String, default: "Message" }
+    title: { type: String, default: 'Title' },
+    message: { type: String, default: 'Message' }
   },
 
   methods: {
-    closeDialog() {
-      this.$emit("close")
+    closeDialog () {
+      this.$emit('close')
     }
   }
 }
 </script>
 
 <style lang="sass" scoped>
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .dialog-error
     &__title
@@ -74,8 +74,8 @@ export default {
       @include body-text-2
 
     &__button
-      display: flex      
-      justify-content: center      
+      display: flex
+      justify-content: center
       align-items: center
       text-align: center
       margin-top: 64.5px

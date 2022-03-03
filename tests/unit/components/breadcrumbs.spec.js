@@ -1,14 +1,13 @@
-import { shallowMount, createLocalVue, RouterLinkStub } from "@vue/test-utils"
-import Breadcrumbs from "@/components/Breadcrumbs"
-import VueRouter from "vue-router"
+import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
+import Breadcrumbs from '@/components/UiDebioBreadcrumbs'
+import VueRouter from 'vue-router'
 
-describe("Breadcrumbs component", () => {
-
+describe('Breadcrumbs component', () => {
   const stubs = {
     RouterLink: RouterLinkStub
   }
-  
-  it("Should render breadcrumbs ", () => {
+
+  it('Should render breadcrumbs ', () => {
     const router = new VueRouter()
     const localVue = createLocalVue()
     localVue.use(VueRouter)
@@ -21,20 +20,19 @@ describe("Breadcrumbs component", () => {
     expect(breadcrumb.exists()).toBe(true)
   })
 
-  
-  it("Watcher should return array of strings", () => {
-    const spy = jest.spyOn(Breadcrumbs.watch.$route, "handler")
+  it('Watcher should return array of strings', () => {
+    const spy = jest.spyOn(Breadcrumbs.watch.$route, 'handler')
     expect(spy).toHaveReturned
   })
 
-  it("Should render text with link title", () => {
+  it('Should render text with link title', () => {
     const router = new VueRouter()
     const localVue = createLocalVue()
     localVue.use(VueRouter)
 
     let result = router.history.current.name
     if (!result) {
-      result = ""
+      result = ''
     }
 
     const breadcrumb = shallowMount(Breadcrumbs, {
@@ -44,5 +42,4 @@ describe("Breadcrumbs component", () => {
     })
     expect(breadcrumb.text()).toBe(result)
   })
-
 })

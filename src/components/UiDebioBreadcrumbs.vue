@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "UiDebioBreadcrumbs",
+  name: 'UiDebioBreadcrumbs',
 
   data: () => ({
     links: []
@@ -21,12 +21,12 @@ export default {
     $route: {
       deep: true,
       immediate: true,
-      handler(val) {
-        const formated = val.path.split("/")
+      handler (val) {
+        const formated = val.path.split('/')
         const links = formated.slice(1, formated?.length)
-        if (!this.$router.options.routes) return 
+        if (!this.$router.options.routes) return
         const routeChildren = this.$router.options.routes
-          .find(route => route.path.split("/")[1] === val.path.split("/")[1])
+          .find(route => route.path.split('/')[1] === val.path.split('/')[1])
           .children
 
         const parentRoute = routeChildren.find(route => route.name === val.meta?.parent)
@@ -38,12 +38,14 @@ export default {
         this.links = this.links
           .slice(0, this.$route.matched.length)
           .reduce((filtered, link, idx) => {
-            if (parentRoute && idx === 1) filtered.push({
-              title: parentRoute.meta.pageHeader,
-              to: parentRoute.name
-            })
+            if (parentRoute && idx === 1) {
+              filtered.push({
+                title: parentRoute.meta.pageHeader,
+                to: parentRoute.name
+              })
+            }
 
-            const compute = 
+            const compute =
               (idx === this.$route.matched.length - 1 && links[idx + 1]) ||
               (idx !== 0 && link !== this.$route.meta.pageHeader)
                 ? this.$route.meta.pageHeader
@@ -56,27 +58,26 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     this.initLinksAnimation()
   },
 
-  updated() {
+  updated () {
     this.initLinksAnimation()
   },
 
   methods: {
-    initLinksAnimation() {
-      document.querySelectorAll(".ui-debio-breadcrumbs__link").forEach((link, idx) => {
+    initLinksAnimation () {
+      document.querySelectorAll('.ui-debio-breadcrumbs__link').forEach((link, idx) => {
         if (idx === 0) return
         const delay = idx + 3
-  
-        link.classList.add("ui-debio-breadcrumbs__link--animated")
+
+        link.classList.add('ui-debio-breadcrumbs__link--animated')
         link.style.animationDelay = `.${delay}s`
-  
+
         setTimeout(() => {
-          link.classList.remove("ui-debio-breadcrumbs__link--animated")
+          link.classList.remove('ui-debio-breadcrumbs__link--animated')
           link.style.animationDelay = null
-  
         }, `${delay + 4}00`)
       })
     }
@@ -85,7 +86,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .ui-debio-breadcrumbs
     &__links
@@ -106,7 +107,7 @@ export default {
 
       &:not(:last-of-type)
         color: #ABABAB
-        
+
         &::after
           content: "\F0142"
           color: #ABABAB

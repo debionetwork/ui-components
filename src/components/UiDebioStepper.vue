@@ -15,13 +15,13 @@
 
 <script>
 export default {
-  name: "UiDebioStepper",
+  name: 'UiDebioStepper',
   props: {
     items: {
       type: Array,
       default: () => [],
       validator: val => {
-        const allowedKeys = ["number", "title", "active"]
+        const allowedKeys = ['number', 'title', 'active']
 
         return val.every(v => Object.keys(v).every(k => allowedKeys.includes(k)))
       }
@@ -30,12 +30,12 @@ export default {
   },
 
   computed: {
-    computeClasses() {
+    computeClasses () {
       return this.items.map(item => {
         return {
-          "ui-debio-stepper__item--active": item.active,
-          "ui-debio-stepper__item--active-line": this.withLineIndicator && item.active 
-        } 
+          'ui-debio-stepper__item--active': item.active,
+          'ui-debio-stepper__item--active-line': this.withLineIndicator && item.active
+        }
       })
     }
   }
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "../../styles/mixins.sass"
+  @import "../styles/mixins.sass"
 
   .ui-debio-stepper
     &__wrapper
@@ -82,12 +82,12 @@ export default {
           height: 0.188rem
           background: #F5F7F9
           transition: all cubic-bezier(.7,-0.04,.61,1.14) .3s
-          z-index: 1 
+          z-index: 1
 
       &:last-child
         &::before
           z-index: 0
-  
+
     &__number
       display: flex
       align-items: center
@@ -106,7 +106,6 @@ export default {
       max-width: 8.25rem
       text-align: center
       @include body-text-medium-4
-
 
   @keyframes scale
     0%

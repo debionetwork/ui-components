@@ -20,29 +20,28 @@
 <script>
 
 export default {
-  name: "UiDebioButton",
   props: {
-    to: { type: [String, Object], default: null},
-    color: { type: String, default: "white"},
+    to: { type: [String, Object], default: null },
+    color: { type: String, default: 'white' },
     dark: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     block: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
-    width: { type: [String, Number], default: "203px" },
+    width: { type: [String, Number], default: '203px' },
     outlined: { type: Boolean, default: false },
     height: String,
-    on: {type: [Boolean, String, Function, Object], default: null},
-    bind: {type: [Boolean, String, Function, Object], default: null }
+    on: { type: [Boolean, String, Function, Object], default: null },
+    bind: { type: [Boolean, String, Function, Object], default: null }
   },
-  mounted() {
+  mounted () {
     this.changeStyle()
   },
   methods: {
-    onClick(e) {
-      this.$emit("click", e)
+    onClick (e) {
+      this.$emit('click', e)
     },
 
-    changeStyle() {
+    changeStyle () {
       // TODO: Do something
     }
   }

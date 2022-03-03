@@ -30,74 +30,74 @@
 </template>
 
 <script>
-import UiDebioButton from "../Button"
+import UiDebioButton from './UiDebioButton'
 
 export default {
-  name: "SearchBar",
+  name: 'SearchBar',
   components: {
     UiDebioButton
   },
   props: {
     filteredItems: { type: Array, default: () => [] },
-    itemValue: { type: String, default: "" },
-    itemText: { type: String, default: "" },
+    itemValue: { type: String, default: '' },
+    itemText: { type: String, default: '' },
     label: String,
     withDropdown: Boolean,
     returnObject: Boolean
   },
   computed: {
-    showFilter() { // Show filter if filter-menu slot has content
-      return !!this.$slots["filter-menu"]
+    showFilter () { // Show filter if filter-menu slot has content
+      return !!this.$slots['filter-menu']
     },
 
-    showResults() {
+    showResults () {
       return this.withDropdown && this.filteredItems?.length && this.active
     }
   },
 
   data: () => ({
     active: true,
-    searchQuery: ""
+    searchQuery: ''
   }),
 
   methods: {
-    onClickOutside() {
+    onClickOutside () {
       this.active = false
     },
 
-    onSearchInput(val) {
+    onSearchInput (val) {
       this.active = true
       this.searchQuery = val
-      this.$emit("input", val)
+      this.$emit('input', val)
     },
 
-    boldString(str, substr) {
+    boldString (str, substr) {
       substr = substr.charAt(0).toUpperCase() + substr.slice(1)
 
-      const strRegExp = new RegExp(substr, "g")
-      return str.replace(strRegExp, "<b>"+substr+"</b>")
+      const strRegExp = new RegExp(substr, 'g')
+      return str.replace(strRegExp, '<b>' + substr + '</b>')
     },
 
-    onItemSelected(item) {
+    onItemSelected (item) {
       const selection = this.returnObject
         ? item
         : item[this.itemValue]
 
       if (!this.itemValue && !this.returnObject) {
-        console.error("If you do not set return-object props, please at least set item-value props to return a value")
+        console.error('If you do not set return-object props, please at least set item-value props to return a value')
         return
       }
 
-      this.$emit("itemSelected", selection)
+      this.$emit('itemSelected', selection)
     }
   }
 }
 </script>
 
 <style lang="sass">
-@import '../../styles/variables.scss'
+@import '../styles/variables.scss'
 
-.bri-filter-btn 
+.bri-filter-btn
   width: 181px
   height: 48px !important
   border: 2px solid #E5E5E6
@@ -109,42 +109,34 @@ export default {
   border-top-right-radius: 0
   border-bottom-right-radius: 0
 
-  span 
+  span
     display: flex
     flex-direction: row
     justify-content: space-between
-  
 
-  i 
+  i
     color: rgba(0, 0, 0, 0.54) !important
     transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s
-  
 
-  &:focus 
+  &:focus
     border: 2px solid #3f2040 !important
-    i 
+    i
       color: #3f2040 !important
-    
-    &::before 
+
+    &::before
       background: #F9F9F9 !important
-    
-  
 
-
-.bri-search-field 
+.bri-search-field
   width: 100%
 
-  fieldset 
+  fieldset
     border: 2px solid #E5E5E6
-  
-  
-  .v-input--is-focused 
-    fieldset 
+
+  .v-input--is-focused
+    fieldset
       border: 2px solid #3f2040 !important
-    
-  
-  
-  .v-input__append-inner 
+
+  .v-input__append-inner
     display: flex !important
     height: 30px !important
     align-items: center
@@ -172,7 +164,7 @@ export default {
 
     .v-text-field--outlined.v-input--dense .v-label
     top: 2px
-    
+
     .v-label
       line-height: 28px !important
       font-size: 12px
@@ -185,8 +177,6 @@ export default {
     .v-input__slot
       border-bottom-left-radius: 0 !important
       border-top-left-radius: 0 !important
-      
-
 
 .search-bar
   width: 342px
@@ -198,17 +188,13 @@ export default {
     z-index: 99
     background: #ffffff
 
-
   &__item
     cursor: pointer
 
     &:not(:last-child)
       margin-bottom: 10px
 
-
     &:hover
       background: rgba(0, 0, 0, .1)
-
-
 
 </style>
