@@ -1,14 +1,11 @@
-import Vue from 'vue';
-import vuetify from '@/plugins';
-import Dev from './serve.vue';
-// To register individual components where they are used (serve.vue) instead of using the
-// library as a whole, comment/remove this import and it's corresponding "Vue.use" call
-import DebionetworkUiComponents from '@/entry.esm';
-Vue.use(DebionetworkUiComponents);
+import Vue from 'vue'
+import Dev from './serve.vue'
+import vuetify from './plugins/vuetify'
+import './plugins/debionetwork-ui-components'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 new Vue({
   vuetify,
-  render: (h) => h(Dev),
-}).$mount('#app');
+  render: (h) => h(Dev)
+}).$mount('#app')
