@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "@/styles/mixins.sass"
+  @import "../../styles/mixins.sass"
 
   .dialog-card
     padding: 55px 1px

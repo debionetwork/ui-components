@@ -28,7 +28,8 @@
 
 
       //- <!-- Custom Footer -->
-      template(v-slot:footer)
+      //- <!-- For build fix -->
+      <template v-slot:footer>
         div(v-if="showFooter" class="footer d-flex justify-space-between align-center flex-wrap")
           div(
             class="pagination-info"
@@ -44,7 +45,7 @@
             :total-visible="10"
             color="secondary"
           )
-
+      </template>
 </template>
 
 <script>
@@ -128,9 +129,9 @@ export default {
 </script>
 
 <style lang="sass">
-@import '@/styles/variables.scss'
+@import '../../styles/variables.scss'
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap')
-@import "@/styles/mixins.sass"
+@import "../../styles/mixins.sass"
 
 .degenics-datatable-card 
   overflow: hidden !important

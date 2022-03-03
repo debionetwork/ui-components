@@ -267,7 +267,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "@/styles/mixins.sass"
+  @import "../../styles/mixins.sass"
 
   .ui-debio-dropdown
     &__label

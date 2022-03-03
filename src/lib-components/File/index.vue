@@ -127,7 +127,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/styles/mixins.sass"
+  @import "../../styles/mixins.sass"
 
   .ui-debio-file
     width: 100%

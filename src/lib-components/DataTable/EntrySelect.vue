@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "@/styles/variables.scss"
+@import "../../styles/variables.scss"
 .box
   margin: -3px 5px 0px 5px
 .v-text-field.v-text-field--solo .v-input__control

@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style lang="sass">
-  @import "@/styles/mixins.sass"
+  @import "../../styles/mixins.sass"
 
   .ui-debio-breadcrumbs
     &__links

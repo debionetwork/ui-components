@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "@/styles/mixins.sass"
+@import "../../styles/mixins.sass"
 .ui-debio-textarea
   transition: all cubic-bezier(.7, -0.04, .61, 1.14) .3s
   
