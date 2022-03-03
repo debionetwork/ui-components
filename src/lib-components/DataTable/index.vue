@@ -130,7 +130,7 @@ export default {
 
 <style lang="sass">
 @import '../../styles/variables.scss'
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap')
+@import "../../assets/open-sans-font.css"
 @import "../../styles/mixins.sass"
 
 .degenics-datatable-card 
