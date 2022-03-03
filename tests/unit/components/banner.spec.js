@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils"
-import Banner from "@/lib-components/Banner"
-import Card from "@/lib-components/Card"
-import Icon from "@/lib-components/Icon"
+import Banner from "@/components/Banner"
+import Card from "@/components/Card"
+import Icon from "@/components/Icon"
 
 describe("Banner Component", () => {  
   let container

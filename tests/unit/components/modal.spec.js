@@ -2,8 +2,8 @@ import { createLocalVue, mount } from "@vue/test-utils"
 import { closeIcon } from "@debionetwork/ui-icons"
 import Vue from "vue"
 import Vuetify from "vuetify"
-import Modal from "@/lib-components/Modal"
-import Icon from "@/lib-components/Icon"
+import Modal from "@/components/Modal"
+import Icon from "@/components/Icon"
 
 Vue.use(Vuetify)
 

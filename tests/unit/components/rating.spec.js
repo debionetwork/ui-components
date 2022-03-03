@@ -1,6 +1,6 @@
 import { shallowMount, mount } from "@vue/test-utils"
-import Rating from "@/lib-components/Rating"
-import Icon from "@/lib-components/Icon"
+import Rating from "@/components/Rating"
+import Icon from "@/components/Icon"
 
 describe("Rating Component", () => {
   const stubs = { UiDebioIcon: Icon }

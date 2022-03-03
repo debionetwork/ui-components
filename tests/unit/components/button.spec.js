@@ -1,5 +1,5 @@
 import { mount, createLocalVue, RouterLinkStub } from "@vue/test-utils"
-import Button from "@/lib-components/Button"
+import Button from "@/components/Button"
 import Vue from "vue"
 import Vuetify from "vuetify"
 

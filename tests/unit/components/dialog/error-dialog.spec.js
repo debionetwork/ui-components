@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
-import ErrorDialog from "@/lib-components/Dialog/ErrorDialog"
-import Button from "@/lib-components/Button" 
+import ErrorDialog from "@/components/Dialog/ErrorDialog"
+import Button from "@/components/Button" 
 import Vuetify from "vuetify"
 import Vue from "vue"
 

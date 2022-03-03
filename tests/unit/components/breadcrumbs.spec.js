@@ -1,5 +1,5 @@
 import { shallowMount, createLocalVue, RouterLinkStub } from "@vue/test-utils"
-import Breadcrumbs from "@/lib-components/Breadcrumbs"
+import Breadcrumbs from "@/components/Breadcrumbs"
 import VueRouter from "vue-router"
 
 describe("Breadcrumbs component", () => {

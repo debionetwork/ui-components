@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from "@vue/test-utils"
-import Stepper from "@/lib-components/Stepper"
+import Stepper from "@/components/Stepper"
 
 
 const localVue = createLocalVue()

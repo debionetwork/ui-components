@@ -1,7 +1,7 @@
 import { mount, shallowMount } from "@vue/test-utils"
-import File from "@/lib-components/File"
-import Input from "@/lib-components/Input"
-import Button from "@/lib-components/Button"
+import File from "@/components/File"
+import Input from "@/components/Input"
+import Button from "@/components/Button"
 import Vue from "vue"
 import Vuetify from  "vuetify"
 

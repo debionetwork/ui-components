@@ -1,6 +1,6 @@
 import { mount, RouterLinkStub } from "@vue/test-utils"
-import Card from "@/lib-components/Card"
-import Icon from "@/lib-components/Icon"
+import Card from "@/components/Card"
+import Icon from "@/components/Icon"
 
 describe("Common Card", () => {
   it("Should render", () => {

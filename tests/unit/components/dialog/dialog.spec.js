@@ -1,66 +1,52 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
-import AlertDialog from "@/lib-components/Dialog/AlertDialog"
-import Button from "@/lib-components/Button" 
+import Dialog from "@/components/Dialog"
 import Vuetify from "vuetify"
+import Button from "@/components/Button" 
 import Vue from "vue"
 
 Vue.use(Vuetify)
 const localVue = createLocalVue()
 document.body.setAttribute("data-app", true)
 
-describe("Alert Dialog", () => {
-  let vuetify
+describe("Common Dialog", () => {
+  let vuetify 
   let container
-  let stubs = {Button}
+  let stubs = { Button }
 
   beforeEach (() => {
     vuetify = new Vuetify()
   })
 
+
   it("Should render", () => {
-    shallowMount(AlertDialog, {
-      propsData: { show: true}
+    shallowMount(Dialog, {
+      propsData: { show: true }
     })
   })
 
-  it("Should render dialog with an customize image", () => {
-    const imgPath = "alert-circle.png"
-    container = shallowMount(AlertDialog, {
-      localVue,
-      vuetify,
-      propsData : {
-        imgPath
-      }
-    })
 
-    const image = container.find(imgPath).selector
-    expect(image).toBe("alert-circle.png")
-  })
-
-
-  it("Should render dialog with title, message and button value", () => {  
-    container = shallowMount(AlertDialog, {
+  it("Should render dialog with title, message and button with default value", () => {  
+    container = shallowMount(Dialog, {
       localVue,
       vuetify,
       stubs
     })
 
-    expect(container.text()).toContain("Title Alert")
-    expect(container.text()).toContain("Message Alert")
-    expect(container.text()).toContain("Back to Dashboard")
+    expect(container.text()).toContain("Dialog Title")
+    expect(container.text()).toContain("Dialog Message")
+    expect(container.text()).toContain("OK")
 
   })
-
 
   it("Should render dialog with custom title, message, and button value", () => {
     const propsData = {
       show : true,
-      title : "Custom Title Alert",
-      message : "Custom Message Alert",
+      title : "Custom Dialog Title",
+      message : "Custom Dialog Message",
       btnMessage : "Custom Dialog Button Message"
     }  
   
-    container = shallowMount(AlertDialog, {
+    container = shallowMount(Dialog, {
       localVue,
       vuetify,
       stubs,
@@ -74,7 +60,7 @@ describe("Alert Dialog", () => {
   })
 
   it("Should render dialog with button component", () => {
-    container = shallowMount(AlertDialog, {
+    container = shallowMount(Dialog, {
       localVue,
       vuetify,
       stubs
@@ -84,7 +70,7 @@ describe("Alert Dialog", () => {
   })
 
   it("Should render dialog with button in secondary color and widht 150", () => {
-    container = shallowMount(AlertDialog, {
+    container = shallowMount(Dialog, {
       vuetify,
       stubs
     })
@@ -99,7 +85,7 @@ describe("Alert Dialog", () => {
       btnMessage : "Custome message"
     }
 
-    container = shallowMount(AlertDialog, {
+    container = shallowMount(Dialog, {
       localVue,
       vuetify,
       stubs,
@@ -108,5 +94,4 @@ describe("Alert Dialog", () => {
 
     expect(container.findComponent(Button).text()).toBe("Custome message")
   })
-
-})
+}) 

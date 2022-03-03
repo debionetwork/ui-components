@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Recaptcha from "@/lib-components/Recaptcha"
+import Recaptcha from "@/components/Recaptcha"
 
 describe("Recaptcha", () => {
   it("Should render", () => {

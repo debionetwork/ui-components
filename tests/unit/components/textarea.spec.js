@@ -1,5 +1,5 @@
 import { createLocalVue, mount } from "@vue/test-utils"
-import Textarea from "@/lib-components/Textarea"
+import Textarea from "@/components/Textarea"
 import Vue from "vue"
 import Vuetify from "vuetify"
 

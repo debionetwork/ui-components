@@ -1,5 +1,5 @@
 import { mount, RouterLinkStub } from "@vue/test-utils"
-import Avatar from "@/lib-components/Avatar"
+import Avatar from "@/components/Avatar"
 
 describe("Avatar Component", () => {
   it("Should render", () => {

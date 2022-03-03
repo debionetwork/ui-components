@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Input from "@/lib-components/Input"
+import Input from "@/components/Input"
 import Vue from "vue"
 import Vuetify from  "vuetify"
 

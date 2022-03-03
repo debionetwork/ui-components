@@ -1,8 +1,8 @@
 import { createLocalVue, mount } from "@vue/test-utils"
 import Vue from "vue"
 import Vuetify from "vuetify"
-import Dropdown from "@/lib-components/Dropdown"
-import Input from "@/lib-components/Input"
+import Dropdown from "@/components/Dropdown"
+import Input from "@/components/Input"
 
 Vue.use(Vuetify)
 

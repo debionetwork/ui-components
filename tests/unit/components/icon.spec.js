@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils"
-import Icon from "@/lib-components/Icon"
+import Icon from "@/components/Icon"
 import { boxIcon } from "@debionetwork/ui-icons"
 
 
