@@ -2,11 +2,11 @@
 import { defaultIcon } from '@debionetwork/ui-icons'
 
 export default {
-  name: 'UiDebioCard',
+  name: "UiDebioCard",
   props: {
     width: { type: [String, Number], default: 245 },
-    title: { type: String, default: 'Card Title' },
-    subTitle: { type: String, default: 'Card Subtitle' },
+    title: { type: String, default: "Card Title" },
+    subTitle: { type: String, default: "Card Subtitle" },
     to: { type: [String, Object], default: undefined },
     elevation: { type: [String, Number], default: null },
     centeredContent: Boolean,
@@ -19,39 +19,39 @@ export default {
   data: () => ({ defaultIcon }),
 
   computed: {
-    isComponentType () {
-      return this.to && this.tinyCard ? 'router-link' : 'div'
+    isComponentType() {
+      return this.to && this.tinyCard ? "router-link" : "div"
     },
 
-    computeContentType () {
+    computeContentType() {
       return this.tinyCard
-        ? 'ui-debio-card--tiny'
-        : 'ui-debio-card--default'
+        ? "ui-debio-card--tiny"
+        : "ui-debio-card--default"
     },
 
-    classes () {
+    classes() {
       return [
-        'ui-debio-card',
+        "ui-debio-card",
         this.computeContentType,
         { [`elevation-${this.elevation}`]: this.elevation },
-        { 'ui-debio-card--centered': this.centeredContent && this.tinyCard }
+        { "ui-debio-card--centered": this.centeredContent && this.tinyCard }
       ]
     },
 
-    computeStyle () {
+    computeStyle() {
       return {
-        width: this.block ? '100%' : `${this.width}px`
+        width: this.block ? "100%" : `${this.width}px`
       }
     }
   },
 
   methods: {
-    handleClick () {
-      this.$emit('click')
+    handleClick() {
+      this.$emit("click")
     },
 
-    handleDismiss () {
-      this.$emit('dismiss')
+    handleDismiss() {
+      this.$emit("dismiss")
     }
   }
 }

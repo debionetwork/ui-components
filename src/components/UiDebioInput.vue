@@ -33,17 +33,17 @@ import { alertIcon } from '@debionetwork/ui-icons'
 import { validateInput } from '@/lib/validate'
 
 export default {
-  name: 'UiDebioInput',
+  name: "UiDebioInput",
   mixins: [validateInput],
 
   inheritAttrs: false,
 
   props: {
-    autocomplete: { type: String, default: 'off' },
-    spellcheck: { type: String, default: 'false' },
+    autocomplete: { type: String, default: "off" },
+    spellcheck: { type: String, default: "false" },
     label: { type: String, default: null },
     width: { type: [Number, String], default: 200 },
-    variant: { type: String, default: 'default' },
+    variant: { type: String, default: "default" },
 
     validateOnBlur: Boolean,
     outlined: Boolean,
@@ -55,57 +55,54 @@ export default {
   data: () => ({ focus: false, alertIcon }),
 
   computed: {
-    classes () {
+    classes() {
       return [
-        { 'ui-debio-input--disabled': this.disabled },
-        { 'ui-debio-input--outlined': this.outlined },
-        { 'ui-debio-input--errored': (this.isError && this.isError?.length) || (this.error && this.errorMessages) },
-        { 'ui-debio-input--default': this.variant === 'default' },
-        { 'ui-debio-input--small': this.variant === 'small' },
-        { 'ui-debio-input--large': this.variant === 'large' },
-        { 'ui-debio-input--read-only': this.readOnly },
-        { 'ui-debio-input--active': this.focus },
-        {
-          'ui-debio-input--prepend-icon':
-          (this.$attrs.value && this.$slots['icon-prepend']) || this.$slots['icon-prepend']
-        },
-        {
-          'ui-debio-input--append-icon':
-          (this.$attrs.value && this.$slots['icon-append']) || this.$slots['icon-append']
-        }
+        { "ui-debio-input--disabled": this.disabled },
+        { "ui-debio-input--outlined": this.outlined },
+        { "ui-debio-input--errored": (this.isError && this.isError?.length) || (this.error && this.errorMessages) },
+        { "ui-debio-input--default": this.variant === "default" },
+        { "ui-debio-input--small": this.variant === "small" },
+        { "ui-debio-input--large": this.variant === "large" },
+        { "ui-debio-input--read-only": this.readOnly },
+        { "ui-debio-input--active": this.focus },
+        { "ui-debio-input--prepend-icon":
+          (this.$attrs.value && this.$slots["icon-prepend"]) || this.$slots["icon-prepend"] },
+        { "ui-debio-input--append-icon":
+          (this.$attrs.value && this.$slots["icon-append"]) || this.$slots["icon-append"] }
       ]
     },
 
-    computeStyle () {
+    computeStyle() {
       return {
-        width: this.block ? '100%' : `${this.width}px`
+        width: this.block ? "100%" : `${this.width}px`
       }
     },
 
-    listeners () {
+    listeners() {
       return {
         ...this.$listeners,
         input: event => {
-          this.$emit('input', event.target.value)
+          this.$emit("input", event.target.value)
         },
         change: event => {
-          this.$emit('change', event.target.value)
+          this.$emit("change", event.target.value)
         }
       }
     }
   },
 
   watch: {
-    '$attrs.value': {
-      handler (newVal, oldVal) {
-        if (!(this.validateOnBlur && !!oldVal && !this.isError?.length)) this._handleError(newVal)
+    "$attrs.value": {
+      handler(newVal, oldVal) {
+        if (this.validateOnBlur && !!oldVal && !this.isError?.length) return
+        else this._handleError(newVal)
       }
     },
 
     error: {
       deep: true,
       immediate: true,
-      handler (val, oldVal) {
+      handler(val, oldVal) {
         if (oldVal) this.isError = null
         if (!val) return
 
@@ -115,20 +112,20 @@ export default {
   },
 
   methods: {
-    handleBlur () {
+    handleBlur() {
       if (this.validateOnBlur) this._handleError(this.$attrs.value)
       this.focus = false
     },
 
-    _handleError (value) {
+    _handleError(value) {
       const error = this.rules.reduce((filtered, rule) => {
         const isError = rule.call(this, value)
 
-        if (typeof isError !== 'boolean') filtered.push({ message: isError })
+        if (typeof isError !== "boolean") filtered.push({ message: isError })
 
         return filtered
       }, [])
-      this.$emit('isError', this.uuid, Boolean(error.length))
+      this.$emit("isError", this.uuid, Boolean(error.length))
 
       this.isError = error
     }

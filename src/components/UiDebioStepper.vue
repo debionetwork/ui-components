@@ -15,13 +15,13 @@
 
 <script>
 export default {
-  name: 'UiDebioStepper',
+  name: "UiDebioStepper",
   props: {
     items: {
       type: Array,
       default: () => [],
       validator: val => {
-        const allowedKeys = ['number', 'title', 'active']
+        const allowedKeys = ["number", "title", "active"]
 
         return val.every(v => Object.keys(v).every(k => allowedKeys.includes(k)))
       }
@@ -30,11 +30,11 @@ export default {
   },
 
   computed: {
-    computeClasses () {
+    computeClasses() {
       return this.items.map(item => {
         return {
-          'ui-debio-stepper__item--active': item.active,
-          'ui-debio-stepper__item--active-line': this.withLineIndicator && item.active
+          "ui-debio-stepper__item--active": item.active,
+          "ui-debio-stepper__item--active-line": this.withLineIndicator && item.active
         }
       })
     }
@@ -114,5 +114,4 @@ export default {
       transform: scale(1.15)
     100%
       transform: scale(1)
-
 </style>
