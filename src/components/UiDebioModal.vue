@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { closeIcon } from '@debionetwork/ui-icons'
-import UiDebioButton from './UiDebioButton'
+import { closeIcon } from "@debionetwork/ui-icons"
+import UiDebioButton from "./UiDebioButton"
 
 const allowedType = /^(alert|form)$/
 
@@ -65,7 +65,7 @@ export default {
   data: () => ({ closeIcon, dismissAnimation: false }),
 
   computed: {
-    classes() {
+    classes () {
       return [
         { "ui-debio-modal--active": this.show },
         { "ui-debio-modal--bounced": this.dismissAnimation && this.disableDismiss },
@@ -77,7 +77,7 @@ export default {
   watch: {
     show: {
       immediate: true,
-      handler(val) {
+      handler (val) {
         if (!val) document.querySelector("html").style.overflowY = null
         else document.querySelector("html").style.overflowY = "hidden"
       }
@@ -85,12 +85,12 @@ export default {
   },
 
   methods: {
-    handleCtaAction() {
+    handleCtaAction () {
       document.querySelector("html").style.overflowY = null
       this.ctaAction()
     },
 
-    handleClickOutside() {
+    handleClickOutside () {
       this.dismissAnimation = true
 
       this.$nextTick(() => {
@@ -102,7 +102,7 @@ export default {
       if (this.show && !this.disableDismiss) this.$emit("onClose", false)
     },
 
-    closeConditional() { return this.show }
+    closeConditional () { return this.show }
   }
 }
 </script>

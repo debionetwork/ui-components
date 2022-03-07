@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import UiDebioButton from './UiDebioButton'
+import UiDebioButton from "./UiDebioButton"
 
 export default {
-  name: 'UiDebioDialog',
+  name: "UiDebioDialog",
 
   components: {
     UiDebioButton
@@ -26,18 +26,18 @@ export default {
     show: Boolean,
     height: { type: [String, Number], default: 276 },
     width: { type: [String, Number], default: 500 },
-    title: { type: String, default: 'Dialog Title' },
-    message: { type: String, default: 'Dialog Message' },
-    btnMessage: { type: String, default: 'OK' }
+    title: { type: String, default: "Dialog Title" },
+    message: { type: String, default: "Dialog Message" },
+    btnMessage: { type: String, default: "OK" }
   },
 
   methods: {
     closeDialog () {
-      this.$emit('close')
+      this.$emit("close")
     },
 
     onSubmit () {
-      this.$emit('click')
+      this.$emit("click")
     }
   }
 }

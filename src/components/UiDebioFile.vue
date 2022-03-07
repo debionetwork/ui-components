@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import UiDebioButton from './UiDebioButton'
-import { alertIcon } from '@debionetwork/ui-icons'
-import { validateInput } from '@/lib/validate'
+import UiDebioButton from "./UiDebioButton"
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
 
 export default {
   name: "UiDebioFile",

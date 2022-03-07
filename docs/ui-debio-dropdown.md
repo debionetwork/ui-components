@@ -16,6 +16,7 @@ eg `<span>` and `<ui-debio-dropdown>` but in pug `span` and `ui-debio-dropdown`
 - `returnObject[Boolean]`: Will return an object after choosing an item
 - `closeOnSelect[Boolean]`: When enable, dropdown will close items selection after clicking
 - `block[Boolean]`: Expands the dropdown to 100% of available space.
+- `disabled [Boolean]`: To set to a disabled state
 
 ### Slots
 - `item`: Get current item
@@ -71,11 +72,11 @@ sample array of objects
 "collections": [
   {
     "name": "Happy",
-    "emoji": 😁
+    "emoji": "😁"
   },
   {
     "name": "Sad",
-    "emoji": 😔
+    "emoji": "😔"
   }
 ]
 ```

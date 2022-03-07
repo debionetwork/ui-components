@@ -30,7 +30,7 @@ export default {
   },
 
   computed: {
-    computeClasses() {
+    computeClasses () {
       return this.items.map(item => {
         return {
           "ui-debio-stepper__item--active": item.active,

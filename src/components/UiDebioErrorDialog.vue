@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import UiDebioButton from './UiDebioButton'
-import alertIcon from '@/assets/alert-triangle.png'
+import UiDebioButton from "./UiDebioButton"
+import alertIcon from "@/assets/alert-triangle.png"
 
 export default {
-  name: 'UiDebioErrorDialog',
+  name: "UiDebioErrorDialog",
 
   data: () => ({
     alertIcon
@@ -41,13 +41,13 @@ export default {
 
   props: {
     show: Boolean,
-    title: { type: String, default: 'Title' },
-    message: { type: String, default: 'Message' }
+    title: { type: String, default: "Title" },
+    message: { type: String, default: "Message" }
   },
 
   methods: {
     closeDialog () {
-      this.$emit('close')
+      this.$emit("close")
     }
   }
 }

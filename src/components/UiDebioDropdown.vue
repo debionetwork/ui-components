@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import { alertIcon } from '@debionetwork/ui-icons'
-import { validateInput } from '@/lib/validate'
-import { generateUUID } from '@/lib/utils'
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
+import { generateUUID } from "@/lib/utils"
 
 const allowedSize = /^(default|small|large)$/
 

@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import { alertIcon } from '@debionetwork/ui-icons'
-import { validateInput } from '@/lib/validate'
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
 
 export default {
   name: "UiDebioTextArea",

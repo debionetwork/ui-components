@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import EntrySelect from './UiDebioDataTable/EntrySelect'
+import EntrySelect from "./UiDebioDataTable/EntrySelect"
 
 export default {
-  name: 'DataTable',
+  name: "DataTable",
   components: { EntrySelect },
   props: {
     headers: { type: [Object, Array] },
@@ -62,7 +62,7 @@ export default {
     loading: { type: Boolean },
     expand: { type: Boolean },
     customFilter: { type: [String, Boolean], default: false },
-    loadingText: { type: String, default: '' },
+    loadingText: { type: String, default: "" },
     disableSort: { type: Boolean, default: false },
     showFooter: { type: Boolean, default: true }
   },
@@ -74,7 +74,7 @@ export default {
   }),
   methods: {
     clickedRow (item) {
-      this.$emit('click', item)
+      this.$emit("click", item)
     },
 
     setEntriesPerPage (val) {
@@ -84,7 +84,7 @@ export default {
     defaultFilter (value, search /* item */) {
       return value != null &&
       search != null &&
-      typeof value !== 'boolean' &&
+      typeof value !== "boolean" &&
       value.toString().toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) !== -1
     },
 
@@ -109,7 +109,7 @@ export default {
         return this.search
       },
       set (val) {
-        this.$emit('input', val)
+        this.$emit("input", val)
       }
     },
     _customFilter () {
@@ -120,7 +120,7 @@ export default {
     },
 
     computedLoadingText () {
-      return this.loadingText ? this.loadingText : 'Loading.. Please wait'
+      return this.loadingText ? this.loadingText : "Loading.. Please wait"
     }
 
   }

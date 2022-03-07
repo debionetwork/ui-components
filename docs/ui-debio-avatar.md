@@ -47,7 +47,7 @@ ui-debio-avatar(
   size="24"
   src="urlImage"
   option
-  option-text="Connect"
-  @optionClicked="connectToMetamask"
+  option-text="My text option"
+  @optionClicked="handleClicked"
 )
 ```

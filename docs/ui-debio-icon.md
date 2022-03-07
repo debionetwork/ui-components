@@ -16,7 +16,7 @@ eg `<span>` and `<ui-debio-icon>` but in pug `span` and `ui-debio-icon`
 NOTE: To fill the icon prop `icon` you need to import an icon from `@/common/icons`
 
 ```js
-import {  metamaskFoxIcon } from "@/common/icons"
+import { alertIcon } from "@debionetwork/ui-icons"
 
 // Then you add/register the metamaskFoxIcon to data properties like so
 export default {

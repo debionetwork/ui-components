@@ -75,15 +75,15 @@ export default {
   }),
 
   computed: {
-    isComponentType() {
+    isComponentType () {
       return this.to ? "router-link" : "div"
     },
 
-    showInitial() {
+    showInitial () {
       return this.initial && !this.src && !this.$slots["icon"]
     },
 
-    classes() {
+    classes () {
       const roundedType = this.roundedType === "default"
         ? "ui-debio-avatar--rounded"
         : "ui-debio-avatar--rounded-circle"
@@ -96,18 +96,18 @@ export default {
       ]
     },
 
-    computeAvatarImage() {
+    computeAvatarImage () {
       return this.src ? this.src : require("../assets/defaultImage.svg")
     },
 
-    computeStyle() {
+    computeStyle () {
       return {
         width: `${this.size}px`,
         height: `${this.size}px`
       }
     },
 
-    computeBorderedStyle() {
+    computeBorderedStyle () {
       const borderColor = (!this.showOption || !this.isHovered) && !this.to
         ? this.borderColor
         : "#C400A5"
@@ -115,31 +115,31 @@ export default {
       return { border: `solid ${this.borderSize}px ${this.active ? "#C400A5" : borderColor}` }
     },
 
-    computeOptionStyle() {
+    computeOptionStyle () {
       return { "ui-debio-avatar__option--opened": this.showOption }
     }
   },
 
   methods: {
-    handleClick() {
+    handleClick () {
       this.$emit("avatarClicked")
     },
 
-    handleErrorImage(e) {
+    handleErrorImage (e) {
       this.imageError = true
       if (e.type === "error") e.target.src = require("../assets/defaultImage.svg")
     },
 
-    handleOptionClick() {
+    handleOptionClick () {
       this.$emit("optionClicked")
     },
 
-    handleMouseOver() {
+    handleMouseOver () {
       this.showOption = true
       this.isHovered = true
     },
 
-    handleMouseLeave() {
+    handleMouseLeave () {
       this.showOption = false
       this.isHovered = false
     }

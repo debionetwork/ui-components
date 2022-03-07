@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { particleIllustration } from '@debionetwork/ui-icons'
+import { particleIllustration } from "@debionetwork/ui-icons"
 
 const allowedGradients = /^(primary|secondary|tertiary|violet)$/
 
@@ -39,7 +39,7 @@ export default {
   data: () => ({ particleIllustration }),
 
   computed: {
-    classes() {
+    classes () {
       return [
         { "banner--with-gradient": this.gradientColor && allowedGradients.test(this.gradientColor) },
         { "banner--gradient-primary": this.gradientColor === "primary" },

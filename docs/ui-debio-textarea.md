@@ -3,7 +3,12 @@
 eg `<span>` and `<ui-debio-textarea>` but in pug `span` and `ui-debio-textarea`
 
 ### Props
-- `width [String, Number]`: To adjust the width
+- `accept[Array, String]`:  unique file type specifiers, describing which file types to allow.
+- `labelRules[String]`: Apply label text rules
+- `validateOnBlur[Boolean]`: Delays validation until blur event
+- `clearFile[Boolean]`: To clear current file
+- `withTooltip[Boolean]`: Apply tooltip on this component
+- `tooltipDesc[String]`: Apply tooltip text on this component, you need enable `withTooltip` to show this text
 - `label [String]`: To add and set a label
 - `variant[String]`: Apply size to component (default, small, large)
 - `block [Boolean]`: To set width to 100%
