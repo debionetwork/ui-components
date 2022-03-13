@@ -36,24 +36,24 @@
 </template>
 
 <script>
-import { closeIcon } from '@debionetwork/ui-icons'
-import UiDebioButton from './UiDebioButton'
+import { closeIcon } from "@debionetwork/ui-icons"
+import UiDebioButton from "./UiDebioButton"
 
 const allowedType = /^(alert|form)$/
 
 export default {
-  name: 'UiDebioModal',
+  name: "UiDebioModal",
   components: { UiDebioButton },
 
   props: {
     show: { type: Boolean, default: false },
     disabledIconAnimate: { type: Boolean, default: false },
-    title: { type: String, default: 'Default title' },
-    type: { type: String, default: 'alert', validator: val => allowedType.test(val) },
+    title: { type: String, default: "Default title" },
+    type: { type: String, default: "alert", validator: val => allowedType.test(val) },
     icon: { type: String, default: null },
     iconSize: { type: [String, Number], default: 80 },
-    iconViewBox: { type: String, default: '0 0 40 40' },
-    ctaTitle: { type: String, default: 'Default button' },
+    iconViewBox: { type: String, default: "0 0 40 40" },
+    ctaTitle: { type: String, default: "Default button" },
     ctaAction: { type: Function, default: () => {} },
     ctaOutlined: { type: Boolean, default: true },
     showCta: { type: Boolean, default: true },
@@ -67,9 +67,9 @@ export default {
   computed: {
     classes () {
       return [
-        { 'ui-debio-modal--active': this.show },
-        { 'ui-debio-modal--bounced': this.dismissAnimation && this.disableDismiss },
-        { 'ui-debio-modal--disabled-icon-animate': this.disabledIconAnimate }
+        { "ui-debio-modal--active": this.show },
+        { "ui-debio-modal--bounced": this.dismissAnimation && this.disableDismiss },
+        { "ui-debio-modal--disabled-icon-animate": this.disabledIconAnimate }
       ]
     }
   },
@@ -78,15 +78,15 @@ export default {
     show: {
       immediate: true,
       handler (val) {
-        if (!val) document.querySelector('html').style.overflowY = null
-        else document.querySelector('html').style.overflowY = 'hidden'
+        if (!val) document.querySelector("html").style.overflowY = null
+        else document.querySelector("html").style.overflowY = "hidden"
       }
     }
   },
 
   methods: {
     handleCtaAction () {
-      document.querySelector('html').style.overflowY = null
+      document.querySelector("html").style.overflowY = null
       this.ctaAction()
     },
 
@@ -99,7 +99,7 @@ export default {
         }, 300)
       })
 
-      if (this.show && !this.disableDismiss) this.$emit('onClose', false)
+      if (this.show && !this.disableDismiss) this.$emit("onClose", false)
     },
 
     closeConditional () { return this.show }

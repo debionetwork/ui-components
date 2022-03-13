@@ -9,9 +9,9 @@ function install (Vue) {
     const componentConfig = requireComponent(fileName)
     // Get the PascalCase version of the component name
     const componentName = fileName
-      .split('/')
+      .split("/")
       .pop()
-      .replace(/\.\w+$/, '')
+      .replace(/\.\w+$/, "")
     // components[componentName] = componentConfig.default || componentConfig
     // Globally register the component
     Vue.component(componentName, componentConfig.default || componentConfig)
@@ -26,9 +26,9 @@ const plugin = {
 // To auto-install when vue is found
 
 let GlobalVue = null
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   GlobalVue = window.Vue
-} else if (typeof global !== 'undefined') {
+} else if (typeof global !== "undefined") {
   GlobalVue = global.Vue
 }
 if (GlobalVue) {
@@ -37,7 +37,7 @@ if (GlobalVue) {
 
 const requireComponent = require.context(
   // Look for files in the current directory
-  './components',
+  "./components",
   // Do not look in subdirectories
   false,
   // Only include "_base-" prefixed .vue files

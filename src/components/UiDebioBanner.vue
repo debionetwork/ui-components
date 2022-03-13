@@ -23,15 +23,15 @@
 </template>
 
 <script>
-import { particleIllustration } from '@debionetwork/ui-icons'
+import { particleIllustration } from "@debionetwork/ui-icons"
 
 const allowedGradients = /^(primary|secondary|tertiary|violet)$/
 
 export default {
-  name: 'Banner',
+  name: "UiDebioBanner",
   props: {
-    title: { type: String, default: 'Default title' },
-    subtitle: { type: String, default: 'Default subtitle' },
+    title: { type: String, default: "Default title" },
+    subtitle: { type: String, default: "Default subtitle" },
     gradientColor: { type: String, default: null },
     withDecoration: Boolean
   },
@@ -41,12 +41,12 @@ export default {
   computed: {
     classes () {
       return [
-        { 'banner--with-gradient': this.gradientColor && allowedGradients.test(this.gradientColor) },
-        { 'banner--gradient-primary': this.gradientColor === 'primary' },
-        { 'banner--gradient-secondary': this.gradientColor === 'secondary' },
-        { 'banner--gradient-tertiary': this.gradientColor === 'tertiary' },
-        { 'banner--gradient-violet': this.gradientColor === 'violet' },
-        { 'banner--with-decoration': this.withDecoration }
+        { "banner--with-gradient": this.gradientColor && allowedGradients.test(this.gradientColor) },
+        { "banner--gradient-primary": this.gradientColor === "primary" },
+        { "banner--gradient-secondary": this.gradientColor === "secondary" },
+        { "banner--gradient-tertiary": this.gradientColor === "tertiary" },
+        { "banner--gradient-violet": this.gradientColor === "violet" },
+        { "banner--with-decoration": this.withDecoration }
       ]
     }
   }

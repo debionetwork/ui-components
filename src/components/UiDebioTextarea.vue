@@ -20,20 +20,21 @@
 </template>
 
 <script>
-import { alertIcon } from '@debionetwork/ui-icons'
-import { validateInput } from '@/lib/validate'
+import { alertIcon } from "@debionetwork/ui-icons"
+import { validateInput } from "@/lib/validate"
 
 export default {
+  name: "UiDebioTextArea",
   mixins: [validateInput],
 
   inheritAttrs: false,
 
   props: {
-    autocomplete: { type: String, default: 'off' },
-    spellcheck: { type: String, default: 'false' },
+    autocomplete: { type: String, default: "off" },
+    spellcheck: { type: String, default: "false" },
     label: { type: String, default: null },
     width: { type: [Number, String], default: 200 },
-    variant: { type: String, default: 'default' },
+    variant: { type: String, default: "default" },
 
     validateOnBlur: Boolean,
     outlined: Boolean,
@@ -45,49 +46,50 @@ export default {
   data: () => ({ focus: false, alertIcon }),
 
   computed: {
-    classes () {
+    classes() {
       return [
-        { 'ui-debio-textarea--disabled': this.disabled },
-        { 'ui-debio-textarea--outlined': this.outlined },
-        { 'ui-debio-textarea--errored': (this.isError && this.isError?.length) || (this.error && this.errorMessages) },
-        { 'ui-debio-textarea--default': this.variant === 'default' },
-        { 'ui-debio-textarea--small': this.variant === 'small' },
-        { 'ui-debio-textarea--large': this.variant === 'large' },
-        { 'ui-debio-textarea--read-only': this.readOnly },
-        { 'ui-debio-textarea--active': this.focus }
+        { "ui-debio-textarea--disabled": this.disabled },
+        { "ui-debio-textarea--outlined": this.outlined },
+        { "ui-debio-textarea--errored": (this.isError && this.isError?.length) || (this.error && this.errorMessages) },
+        { "ui-debio-textarea--default": this.variant === "default" },
+        { "ui-debio-textarea--small": this.variant === "small" },
+        { "ui-debio-textarea--large": this.variant === "large" },
+        { "ui-debio-textarea--read-only": this.readOnly },
+        { "ui-debio-textarea--active": this.focus }
       ]
     },
 
-    computeStyle () {
+    computeStyle() {
       return {
-        width: this.block ? '100%' : `${this.width}px`
+        width: this.block ? "100%" : `${this.width}px`
       }
     },
 
-    listeners () {
+    listeners() {
       return {
         ...this.$listeners,
         input: event => {
-          this.$emit('input', event.target.value)
+          this.$emit("input", event.target.value)
         },
         change: event => {
-          this.$emit('change', event.target.value)
+          this.$emit("change", event.target.value)
         }
       }
     }
   },
 
   watch: {
-    '$attrs.value': {
-      handler (newVal, oldVal) {
-        if (!(this.validateOnBlur && !!oldVal && !this.isError?.length)) this._handleError(newVal)
+    "$attrs.value": {
+      handler(newVal, oldVal) {
+        if (this.validateOnBlur && !!oldVal && !this.isError?.length) return
+        else this._handleError(newVal)
       }
     },
 
     error: {
       deep: true,
       immediate: true,
-      handler (val, oldVal) {
+      handler(val, oldVal) {
         if (oldVal) this.isError = null
         if (!val) return
 
@@ -97,20 +99,20 @@ export default {
   },
 
   methods: {
-    handleBlur () {
+    handleBlur() {
       if (this.validateOnBlur) this._handleError(this.$attrs.value)
       this.focus = false
     },
 
-    _handleError (value) {
+    _handleError(value) {
       const error = this.rules.reduce((filtered, rule) => {
         const isError = rule.call(this, value)
 
-        if (typeof isError !== 'boolean') filtered.push({ message: isError })
+        if (typeof isError !== "boolean") filtered.push({ message: isError })
 
         return filtered
       }, [])
-      this.$emit('isError', this.uuid, Boolean(error.length))
+      this.$emit("isError", this.uuid, Boolean(error.length))
 
       this.isError = error
     }

@@ -25,7 +25,7 @@ export default {
         return this.value
       },
       set (val) {
-        this.$emit('select', val)
+        this.$emit("select", val)
       }
     }
   }

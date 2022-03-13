@@ -1,8 +1,8 @@
 <script>
-import Vue from 'vue'
+import Vue from "vue"
 
 export default Vue.extend({
-  name: 'ServeDev'
+  name: "ServeDev"
 })
 </script>
 

@@ -1,30 +1,30 @@
-import { shallowMount, mount } from '@vue/test-utils'
-import Rating from '@/components/UiDebioRating'
-import Icon from '@/components/UiDebioIcon'
+import { shallowMount, mount } from "@vue/test-utils"
+import Rating from "@/components/UiDebioRating"
+import Icon from "@/components/UiDebioIcon"
 
-describe('Rating Component', () => {
+describe("Rating Component", () => {
   const stubs = { UiDebioIcon: Icon }
   let container
 
-  it('Should render', () => {
+  it("Should render", () => {
     container = mount(Rating)
 
     expect(container.exists()).toBe(true)
   })
 
-  it('Should render without reviewers count', () => {
+  it("Should render without reviewers count", () => {
     container = mount(Rating, {
       propsData: {
         withReviewers: false
       }
     })
 
-    const reviewersLabel = container.find('.ui-debio-rating__label')
+    const reviewersLabel = container.find(".ui-debio-rating__label")
 
     expect(reviewersLabel.exists()).toBe(false)
   })
 
-  it('Should render values correctly', () => {
+  it("Should render values correctly", () => {
     const rating = 4.2
     const computeRating = `${rating * 20}%`
 
@@ -32,43 +32,43 @@ describe('Rating Component', () => {
       propsData: { rating }
     })
 
-    const stars = container.find('.ui-debio-rating__value')
+    const stars = container.find(".ui-debio-rating__value")
 
-    expect(stars.element.getAttribute('width')).toBe(computeRating)
+    expect(stars.element.getAttribute("width")).toBe(computeRating)
   })
 
-  it('Should render size correctly', () => {
+  it("Should render size correctly", () => {
     container = mount(Rating, {
       propsData: { size: 100 }
     })
 
-    const svg = container.find('svg')
+    const svg = container.find("svg")
 
-    expect(svg.element.getAttribute('height')).toBe('100')
+    expect(svg.element.getAttribute("height")).toBe("100")
   })
 
-  it('Should render interactive star', () => {
+  it("Should render interactive star", () => {
     container = mount(Rating, {
       stubs,
       propsData: { interactive: true }
     })
 
-    const emptyStar = container.findAll('.emptyStar')
+    const emptyStar = container.findAll(".emptyStar")
 
     expect(emptyStar.exists()).toBe(true)
     expect(emptyStar.length).toBe(5)
   })
 
-  it('Should fill value correctly', async () => {
+  it("Should fill value correctly", async () => {
     container = shallowMount(Rating, {
       propsData: { interactive: true }
     })
 
-    const initialStars = container.findAll('.emptyStar')
-    await initialStars.at(2).trigger('click')
+    const initialStars = container.findAll(".emptyStar")
+    await initialStars.at(2).trigger("click")
 
-    const fillStars = container.findAll('.fillStar')
-    const emptyStars = container.findAll('.emptyStar')
+    const fillStars = container.findAll(".fillStar")
+    const emptyStars = container.findAll(".emptyStar")
 
     expect(emptyStars.length).toBe(2)
     expect(fillStars.length).toBe(3)

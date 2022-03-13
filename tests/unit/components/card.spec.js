@@ -1,15 +1,15 @@
-import { mount, RouterLinkStub } from '@vue/test-utils'
-import Card from '@/components/UiDebioCard'
-import Icon from '@/components/UiDebioIcon'
+import { mount, RouterLinkStub } from "@vue/test-utils"
+import Card from "@/components/UiDebioCard"
+import Icon from "@/components/UiDebioIcon"
 
-describe('Common Card', () => {
-  it('Should render', () => {
+describe("Common Card", () => {
+  it("Should render", () => {
     mount(Card)
   })
 
-  it('Should render tiny card as router-link', () => {
+  it("Should render tiny card as router-link", () => {
     const tinyCard = true
-    const to = '/'
+    const to = "/"
     const container = mount(Card, {
       propsData: { tinyCard, to },
       stubs: {
@@ -17,23 +17,23 @@ describe('Common Card', () => {
       }
     })
 
-    expect(container.findComponent(RouterLinkStub).props().to).toBe('/')
+    expect(container.findComponent(RouterLinkStub).props().to).toBe("/")
   })
 
-  it('Should render tiny card with default title and subtitle value', () => {
+  it("Should render tiny card with default title and subtitle value", () => {
     const tinyCard = true
     const container = mount(Card, {
       propsData: { tinyCard }
     })
 
-    expect(container.text()).toContain('Card Title')
-    expect(container.text()).toContain('Card Subtitle')
+    expect(container.text()).toContain("Card Title")
+    expect(container.text()).toContain("Card Subtitle")
   })
 
-  it('Should render tiny card with custom title and subtitle value', () => {
+  it("Should render tiny card with custom title and subtitle value", () => {
     const tinyCard = true
-    const title = 'Custom title'
-    const subTitle = 'Custom subtitle'
+    const title = "Custom title"
+    const subTitle = "Custom subtitle"
 
     const container = mount(Card, {
       propsData: { tinyCard, title, subTitle }
@@ -43,7 +43,7 @@ describe('Common Card', () => {
     expect(container.text()).toContain(subTitle)
   })
 
-  it('Should render tiny card with icon', () => {
+  it("Should render tiny card with icon", () => {
     const tinyCard = true
     const withIcon = true
     const container = mount(Card, {

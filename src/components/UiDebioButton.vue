@@ -22,12 +22,12 @@
 export default {
   props: {
     to: { type: [String, Object], default: null },
-    color: { type: String, default: 'white' },
+    color: { type: String, default: "white" },
     dark: { type: Boolean, default: false },
     disabled: { type: Boolean, default: false },
     block: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
-    width: { type: [String, Number], default: '203px' },
+    width: { type: [String, Number], default: "203px" },
     outlined: { type: Boolean, default: false },
     height: String,
     on: { type: [Boolean, String, Function, Object], default: null },
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     onClick (e) {
-      this.$emit('click', e)
+      this.$emit("click", e)
     },
 
     changeStyle () {

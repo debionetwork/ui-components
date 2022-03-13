@@ -30,24 +30,24 @@
 </template>
 
 <script>
-import UiDebioButton from './UiDebioButton'
+import UiDebioButton from "./UiDebioButton"
 
 export default {
-  name: 'SearchBar',
+  name: "SearchBar",
   components: {
     UiDebioButton
   },
   props: {
     filteredItems: { type: Array, default: () => [] },
-    itemValue: { type: String, default: '' },
-    itemText: { type: String, default: '' },
+    itemValue: { type: String, default: "" },
+    itemText: { type: String, default: "" },
     label: String,
     withDropdown: Boolean,
     returnObject: Boolean
   },
   computed: {
     showFilter () { // Show filter if filter-menu slot has content
-      return !!this.$slots['filter-menu']
+      return !!this.$slots["filter-menu"]
     },
 
     showResults () {
@@ -57,7 +57,7 @@ export default {
 
   data: () => ({
     active: true,
-    searchQuery: ''
+    searchQuery: ""
   }),
 
   methods: {
@@ -68,14 +68,14 @@ export default {
     onSearchInput (val) {
       this.active = true
       this.searchQuery = val
-      this.$emit('input', val)
+      this.$emit("input", val)
     },
 
     boldString (str, substr) {
       substr = substr.charAt(0).toUpperCase() + substr.slice(1)
 
-      const strRegExp = new RegExp(substr, 'g')
-      return str.replace(strRegExp, '<b>' + substr + '</b>')
+      const strRegExp = new RegExp(substr, "g")
+      return str.replace(strRegExp, "<b>" + substr + "</b>")
     },
 
     onItemSelected (item) {
@@ -84,11 +84,11 @@ export default {
         : item[this.itemValue]
 
       if (!this.itemValue && !this.returnObject) {
-        console.error('If you do not set return-object props, please at least set item-value props to return a value')
+        console.error("If you do not set return-object props, please at least set item-value props to return a value")
         return
       }
 
-      this.$emit('itemSelected', selection)
+      this.$emit("itemSelected", selection)
     }
   }
 }

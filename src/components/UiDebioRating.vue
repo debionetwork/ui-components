@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import { starIcon } from '@debionetwork/ui-icons'
+import { starIcon } from "@debionetwork/ui-icons"
 
 export default {
-  name: 'UiDebioRating',
+  name: "UiDebioRating",
 
   props: {
     rating: { type: Number, default: 0, validator: val => val >= 0 && val <= 5 },
@@ -79,7 +79,7 @@ export default {
       if (star === this.interactiveStar) this.interactiveStar = 0
       else this.interactiveStar = star
 
-      this.$emit('input', this.interactiveStar)
+      this.$emit("input", this.interactiveStar)
     }
   }
 }
