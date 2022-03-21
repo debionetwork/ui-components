@@ -1,6 +1,6 @@
 {
   "name": "@debionetwork/ui-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Vue component library used in DeBio Networks UI apps.",
   "main": "./dist/debionetwork-ui-components.common.js",
   "repository": {
@@ -15,6 +15,7 @@
     "build": "npm run test && vue-cli-service build --target lib --name debionetwork-ui-components src/plugin.js",
     "build:demo": "vue-cli-service build --dest demo ./dev/main.js",
     "build:local": "vue-cli-service build --target lib --name debionetwork-ui-components src/plugin.js && npm pack",
+    "check": "npm run test:unit && npm run lint && npm run build",
     "lint": "vue-cli-service lint --fix && vue-cli-service lint dev --fix",
     "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit",
