@@ -222,6 +222,7 @@ export default {
     position: relative
     z-index: 7
     height: 100%
+    width: 100%
     object-fit: cover
 
   &--default-avatar,
