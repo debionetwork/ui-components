@@ -19,7 +19,6 @@
       :src="computeAvatarImage"
       :style="computeBorderedStyle"
       v-bind="$attrs"
-      @error="handleErrorImage"
       @click.prevent="handleClick"
     )
 
@@ -97,7 +96,7 @@ export default {
     },
 
     computeAvatarImage () {
-      return this.src ? this.src : require("../assets/defaultImage.svg")
+      return this.src
     },
 
     computeStyle () {
@@ -123,11 +122,6 @@ export default {
   methods: {
     handleClick () {
       this.$emit("avatarClicked")
-    },
-
-    handleErrorImage (e) {
-      this.imageError = true
-      if (e.type === "error") e.target.src = require("../assets/defaultImage.svg")
     },
 
     handleOptionClick () {
