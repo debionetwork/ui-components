@@ -57,10 +57,10 @@ export default {
 
       this.links = links
 
-      if (this.links.length < this.$route.matched.length) return
+      if (this.links.length < currentRoute.matched.length) return
 
       this.links = this.links
-        .slice(0, this.$route.matched.length)
+        .slice(0, currentRoute.matched.length)
         .reduce((filtered, link, idx) => {
           if (parentRoute && idx === 1) filtered.push({
             title: parentRoute.meta.pageHeader,
@@ -68,9 +68,9 @@ export default {
           })
 
           const compute =
-            (idx === this.$route.matched.length - 1 && links[idx + 1]) ||
-            (idx !== 0 && link !== this.$route.meta.pageHeader)
-              ? this.$route.meta.pageHeader
+            (idx === currentRoute.matched.length - 1 && links[idx + 1]) ||
+            (idx !== 0 && link !== currentRoute.meta.pageHeader)
+              ? currentRoute.meta.pageHeader
               : link
 
           filtered.push(compute)
