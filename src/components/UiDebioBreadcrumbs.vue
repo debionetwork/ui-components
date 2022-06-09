@@ -53,7 +53,7 @@ export default {
         .find(route => route.name === baseRoute)
         .children
 
-      const parentRoute = routeChildren.find(route => route.name === route.meta?.parent)
+      const parentRoute = routeChildren.find(route => route.name === currentRoute.meta?.parent)
 
       this.links = links
 
