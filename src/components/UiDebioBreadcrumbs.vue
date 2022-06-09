@@ -44,13 +44,13 @@ export default {
   },
 
   methods: {
-    handlerBreadcrumbs(route, base) {
-      const formated = route.path === "/" ? [base] : [base, ...route.path.split("/")]
-      const links = route.path === "/" ? [base] : [base, ...formated.slice(1, formated?.length)]
+    handlerBreadcrumbs(currentRoute, baseRoute) {
+      const formated = currentRoute.path === "/" ? [baseRoute] : [baseRoute, ...currentRoute.path.split("/")]
+      const links = currentRoute.path === "/" ? [baseRoute] : [baseRoute, ...formated.slice(1, formated?.length)]
       if (!this.$router.options.routes) return
 
       const routeChildren = this.$router.options.routes
-        .find(route => route.name === base)
+        .find(route => route.name === baseRoute)
         .children
 
       const parentRoute = routeChildren.find(route => route.name === route.meta?.parent)
