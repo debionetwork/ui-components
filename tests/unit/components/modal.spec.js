@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from "@vue/test-utils"
 import { closeIcon } from "@debionetwork/ui-icons"
 import Vue from "vue"
-import Vuetify from "@debionetwork/vuetify"
+import Vuetify from "vuetify"
 import Modal from "@/components/UiDebioModal"
 import Icon from "@/components/UiDebioIcon"
 

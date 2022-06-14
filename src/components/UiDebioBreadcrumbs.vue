@@ -17,42 +17,21 @@ export default {
     links: []
   }),
 
+  props: {
+    baseRouter: { type: String, default: null }
+  },
+
   watch: {
     $route: {
       deep: true,
       immediate: true,
       handler(val) {
-        const formated = val.path.split("/")
-        const links = formated.slice(1, formated?.length)
-        if (!this.$router.options.routes) return
-        const routeChildren = this.$router.options.routes
-          .find(route => route.path.split("/")[1] === val.path.split("/")[1])
-          .children
-
-        const parentRoute = routeChildren.find(route => route.name === val.meta?.parent)
-
-        this.links = links
-
-        if (this.links.length < this.$route.matched.length) return
-
-        this.links = this.links
-          .slice(0, this.$route.matched.length)
-          .reduce((filtered, link, idx) => {
-            if (parentRoute && idx === 1) filtered.push({
-              title: parentRoute.meta.pageHeader,
-              to: parentRoute.name
-            })
-
-            const compute =
-              (idx === this.$route.matched.length - 1 && links[idx + 1]) ||
-              (idx !== 0 && link !== this.$route.meta.pageHeader)
-                ? this.$route.meta.pageHeader
-                : link
-
-            filtered.push(compute)
-            return filtered
-          }, [])
+        this.handlerBreadcrumbs(val, this.baseRouter)
       }
+    },
+
+    baseRouter(val) {
+      this.handlerBreadcrumbs(this.$route, val)
     }
   },
 
@@ -65,6 +44,40 @@ export default {
   },
 
   methods: {
+    handlerBreadcrumbs(currentRoute, baseRoute) {
+      const formated = currentRoute.path === "/" ? [baseRoute] : [baseRoute, ...currentRoute.path.split("/")]
+      const links = currentRoute.path === "/" ? [baseRoute] : [baseRoute, ...formated.slice(1, formated?.length)]
+      if (!this.$router.options.routes) return
+
+      const routeChildren = this.$router.options.routes
+        .find(route => route.name === baseRoute)
+        .children
+
+      const parentRoute = routeChildren.find(route => route.name === currentRoute.meta?.parent)
+
+      this.links = links
+
+      if (this.links.length < currentRoute.matched.length) return
+
+      this.links = this.links
+        .slice(0, currentRoute.matched.length)
+        .reduce((filtered, link, idx) => {
+          if (parentRoute && idx === 1) filtered.push({
+            title: parentRoute.meta.pageHeader,
+            to: parentRoute.name
+          })
+
+          const compute =
+            (idx === currentRoute.matched.length - 1 && links[idx + 1]) ||
+            (idx !== 0 && link !== currentRoute.meta.pageHeader)
+              ? currentRoute.meta.pageHeader
+              : link
+
+          filtered.push(compute)
+          return filtered
+        }, [])
+    },
+
     initLinksAnimation() {
       document.querySelectorAll(".ui-debio-breadcrumbs__link").forEach((link, idx) => {
         if (idx === 0) return
