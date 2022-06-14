@@ -1,6 +1,6 @@
 {
   "name": "@debionetwork/ui-components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Vue component library used in DeBio Networks UI apps.",
   "main": "./dist/debionetwork-ui-components.common.js",
   "repository": {
@@ -21,6 +21,9 @@
     "test:unit": "vue-cli-service test:unit",
     "serve": "vue-cli-service serve dev/serve.js",
     "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "vuetify": "^2.2.0"
   },
   "devDependencies": {
     "@debionetwork/ui-icons": "0.0.1",
@@ -50,6 +53,7 @@
     "vue-router": "^3.4.9",
     "vue-template-compiler": "^2.6.12",
     "vuetify": "^2.3.13",
-    "vuetify-loader": "^1.6.0"
+    "vuetify-loader": "^1.6.0",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

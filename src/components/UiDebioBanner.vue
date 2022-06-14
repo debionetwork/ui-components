@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { particleIllustration } from "@debionetwork/ui-icons"
+import { particleIllustration } from "@debionetwork/ui-icons/src/particleIllustration"
 
 const allowedGradients = /^(primary|secondary|tertiary|violet)$/
 
