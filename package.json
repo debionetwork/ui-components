@@ -1,6 +1,6 @@
 {
   "name": "@debionetwork/ui-components",
-  "version": "0.0.8-beta.0",
+  "version": "0.0.8-beta.1",
   "description": "A Vue component library used in DeBio Networks UI apps.",
   "main": "./dist/debionetwork-ui-components.common.js",
   "repository": {
