@@ -1,7 +1,7 @@
 import { createLocalVue, mount } from "@vue/test-utils"
 import Textarea from "@/components/UiDebioTextarea"
 import Vue from "vue"
-import Vuetify from "@debionetwork/vuetify"
+import Vuetify from "vuetify"
 
 Vue.use(Vuetify)
 

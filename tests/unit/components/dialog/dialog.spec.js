@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 import Dialog from "@/components/UiDebioDialog"
-import Vuetify from "@debionetwork/vuetify"
+import Vuetify from "vuetify"
 import Button from "@/components/UiDebioButton"
 import Vue from "vue"
 

@@ -3,7 +3,7 @@ import File from "@/components/UiDebioFile"
 import Input from "@/components/UiDebioInput"
 import Button from "@/components/UiDebioButton"
 import Vue from "vue"
-import Vuetify from "@debionetwork/vuetify"
+import Vuetify from "vuetify"
 
 Vue.use(Vuetify)
 
