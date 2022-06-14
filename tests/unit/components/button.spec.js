@@ -1,7 +1,7 @@
 import { mount, createLocalVue, RouterLinkStub } from "@vue/test-utils"
 import Button from "@/components/UiDebioButton"
 import Vue from "vue"
-import Vuetify from "vuetify"
+import Vuetify from "@debionetwork/vuetify"
 
 Vue.use(Vuetify)
 

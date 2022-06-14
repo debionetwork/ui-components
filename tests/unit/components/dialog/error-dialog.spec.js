@@ -1,7 +1,7 @@
 import { createLocalVue, shallowMount } from "@vue/test-utils"
 import ErrorDialog from "@/components/UiDebioErrorDialog"
 import Button from "@/components/UiDebioButton"
-import Vuetify from "vuetify"
+import Vuetify from "@debionetwork/vuetify"
 import Vue from "vue"
 
 Vue.use(Vuetify)
