@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from "@vue/test-utils"
 import Vue from "vue"
-import Vuetify from "vuetify"
+import Vuetify from "@debionetwork/vuetify"
 import Dropdown from "@/components/UiDebioDropdown"
 import Input from "@/components/UiDebioInput"
 

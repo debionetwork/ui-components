@@ -1,6 +1,6 @@
 {
   "name": "@debionetwork/ui-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A Vue component library used in DeBio Networks UI apps.",
   "main": "./dist/debionetwork-ui-components.common.js",
   "repository": {
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@debionetwork/ui-icons": "0.0.1",
+    "@debionetwork/vuetify": "^0.0.2",
     "@vue/cli-plugin-babel": "^4.5.7",
     "@vue/cli-plugin-eslint": "^4.5.7",
     "@vue/cli-plugin-unit-jest": "~4.5.0",

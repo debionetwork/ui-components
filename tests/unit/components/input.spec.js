@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils"
 import Input from "@/components/UiDebioInput"
 import Vue from "vue"
-import Vuetify from "vuetify"
+import Vuetify from "@debionetwork/vuetify"
 
 Vue.use(Vuetify)
 
