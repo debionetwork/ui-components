@@ -10,6 +10,7 @@
   "files": [
     "dist"
   ],
+  "license": "AGPL-3.0",
   "scripts": {
     "install:hooks": ".maintain/install-hooks.sh",
     "build": "npm run test && vue-cli-service build --target lib --name debionetwork-ui-components src/plugin.js",
