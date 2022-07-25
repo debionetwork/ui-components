@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { alertIcon } from "@debionetwork/ui-icons/src/alert"
+import { alertIcon } from "@debionetwork/ui-icons"
 import { validateInput } from "@/lib/validate"
 import { generateUUID } from "@/lib/utils"
 

@@ -6,8 +6,8 @@
           .banner__content
             .banner__illustrations
               .banner__illustration
-                slot(name="illustration")
-              .banner__content-description
+                slot(v-if="hasIlustrationSlot" name="illustration")
+              .banner__content-description(:class="{ 'banner__content-description--unset-margin': !hasIlustrationSlot }")
                 .banner__title {{ title }}
                 .banner__subtitle {{ subtitle }}
 
@@ -17,13 +17,15 @@
               ui-debio-icon.banner__decoration(
                 v-if="withDecoration"
                 :icon="particleIllustration"
-                size="470"
+                width="350"
+                height="270"
+                color="red"
                 view-box="0 0 390 235"
               )
 </template>
 
 <script>
-import { particleIllustration } from "@debionetwork/ui-icons/src/particleIllustration"
+import { particleIllustration } from "@debionetwork/ui-icons"
 
 const allowedGradients = /^(primary|secondary|tertiary|violet)$/
 
@@ -39,6 +41,10 @@ export default {
   data: () => ({ particleIllustration }),
 
   computed: {
+    hasIlustrationSlot() {
+      return this.$slots["illustration"] || this.$scopedSlots["illustration"]
+    },
+
     classes () {
       return [
         { "banner--with-gradient": this.gradientColor && allowedGradients.test(this.gradientColor) },
@@ -71,6 +77,9 @@ export default {
     &__content-description
       margin-left: 13.25rem
 
+    &__content-description--unset-margin
+      margin-left: unset
+
     &__illustrations
       display: flex
       align-items: center
@@ -98,8 +107,9 @@ export default {
 
     &__decoration
       position: absolute
-      top: -127px
-      right: 17px
+      top: -47px
+      right: 67px
+      transform: scale(1.2)
 
     &--gradient-primary
       .ui-debio-card__body
@@ -115,7 +125,7 @@ export default {
 
     &--gradient-violet
       .ui-debio-card__body
-        background: linear-gradient(91.73deg, #FFAAD4 -0.04%, #FFD3E9 99.96%)
+        background: linear-gradient(91.73deg, #ff58ab -0.04%, #ffd0e7 100%)
 
     @media screen and (max-width: 959px)
       &__content,

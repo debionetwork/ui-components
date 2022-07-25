@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { closeIcon } from "@debionetwork/ui-icons/src/close"
+import { closeIcon } from "@debionetwork/ui-icons"
 import UiDebioButton from "./UiDebioButton"
 
 const allowedType = /^(alert|form)$/

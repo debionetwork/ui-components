@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { starIcon } from "@debionetwork/ui-icons/src/star"
+import { starIcon } from "@debionetwork/ui-icons"
 
 export default {
   name: "UiDebioRating",
