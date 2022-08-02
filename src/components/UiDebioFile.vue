@@ -25,7 +25,7 @@
 
 <script>
 import UiDebioButton from "./UiDebioButton"
-import { alertIcon } from "@debionetwork/ui-icons"
+import alertIcon from "@debionetwork/ui-icons/src"
 import { validateInput } from "@/lib/validate"
 
 export default {
