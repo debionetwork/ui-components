@@ -1,5 +1,5 @@
 <script>
-import { defaultIcon } from "@debionetwork/ui-icons/src/default"
+import defaultIcon from "@debionetwork/ui-icons/src/default"
 
 export default {
   name: "UiDebioCard",

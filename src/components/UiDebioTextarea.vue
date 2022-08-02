@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { alertIcon } from "@debionetwork/ui-icons/src/alert"
+import alertIcon from "@debionetwork/ui-icons/src/alert"
 import { validateInput } from "@/lib/validate"
 
 export default {

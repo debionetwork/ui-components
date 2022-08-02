@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils"
 import Icon from "@/components/UiDebioIcon"
-import { boxIcon } from "@debionetwork/ui-icons/src/box"
+import boxIcon from "@debionetwork/ui-icons/src/box";
 
 describe("Icon Component", () => {
   it("Should render", () => {
