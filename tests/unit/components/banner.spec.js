@@ -118,4 +118,37 @@ describe("Banner Component", () => {
 
     expect(container.find(".test-cta").exists()).toBe(true)
   })
+
+  it("Should get undefined max-width subtitle style", () => {
+    container = mount(Banner, {
+      stubs,
+      propsData: {
+        title: "Custom title",
+        subtitle: "Custom subtitle",
+      }
+    })
+
+    const subtitle = container.find(".banner__subtitle")
+
+    expect(subtitle.exists()).toBe(true)
+    expect(subtitle.attributes().style).not.toBeDefined()
+    expect(subtitle.element.innerHTML).toBe("Custom subtitle")
+  })
+
+  it("Should set max-width subtitle style", () => {
+    container = mount(Banner, {
+      stubs,
+      propsData: {
+        title: "Custom title",
+        subtitle: "Custom subtitle",
+        maxSubTitleWidth: "200px",
+      }
+    })
+
+    const subtitle = container.find(".banner__subtitle")
+
+    expect(subtitle.exists()).toBe(true)
+    expect(subtitle.attributes().style).toBe("max-width: 200px;")
+    expect(subtitle.element.innerHTML).toBe("Custom subtitle")
+  })
 })

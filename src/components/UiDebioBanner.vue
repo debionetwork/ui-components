@@ -9,7 +9,7 @@
                 slot(v-if="hasIlustrationSlot" name="illustration")
               .banner__content-description(:class="{ 'banner__content-description--unset-margin': !hasIlustrationSlot }")
                 .banner__title {{ title }}
-                .banner__subtitle {{ subtitle }}
+                .banner__subtitle(:style="{ 'max-width': maxSubTitleWidth }") {{ subtitle }}
 
             .banner__cta
               .banner__cta-wrapper
@@ -35,6 +35,7 @@ export default {
     title: { type: String, default: "Default title" },
     subtitle: { type: String, default: "Default subtitle" },
     gradientColor: { type: String, default: null },
+    maxSubTitleWidth: { type: String, default: null },
     withDecoration: Boolean
   },
 
