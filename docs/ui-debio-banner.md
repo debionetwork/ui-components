@@ -51,13 +51,3 @@ ui-debio-banner(
   with-decoration
 )
 ```
-
-#### - with custom max-width subtitle (some particle)
-```pug
-ui-debio-banner(
-  title="My title"
-  subtitle="My subtitle"
-  gradient-color="secondary"
-  maxSubTitleWidth="200px"
-)
-```
