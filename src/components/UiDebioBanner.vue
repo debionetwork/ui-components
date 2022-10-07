@@ -89,16 +89,16 @@ export default {
       position: absolute
 
     &__title
-      font-size: 1.875rem
+      font-size: 2,125rem
       font-weight: 600
-      line-height: 2.813rem
+      line-height: 2.75rem
       color: #FFFFFF
 
     &__subtitle
-      max-width: 17.313rem
-      font-size: 0.938rem
-      font-weight: 700
-      line-height: 1.438rem
+      max-width: 29,375rem
+      font-size: 1rem
+      font-weight: 600
+      line-height: 1.25rem
       color: #FFFFFF
 
     &__cta-wrapper
